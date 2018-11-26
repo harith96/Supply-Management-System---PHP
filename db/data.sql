@@ -121,18 +121,18 @@ INSERT INTO `train_cities`(`train_id`, `city`) VALUES (6,'negombo');
 
 
 
-INSERT INTO `shipments`(`train_id`, `store_id`, `_date`, `status`, `capacity_left`) VALUES (1,1,'2018-12-21','delivered',50);
-INSERT INTO `shipments`(`train_id`, `store_id`, `_date`, `status`, `capacity_left`) VALUES (2,2,'2018-12-23','delivered',65);
-INSERT INTO `shipments`(`train_id`, `store_id`, `_date`, `status`, `capacity_left`) VALUES (3,3,'2018-12-23','processing',80);
-INSERT INTO `shipments`(`train_id`, `store_id`, `_date`, `status`, `capacity_left`) VALUES (5,4,'2018-12-25','processing',70);
-INSERT INTO `shipments`(`train_id`, `store_id`, `_date`, `status`, `capacity_left`) VALUES (4,5,'2018-12-25','processing',50);
+INSERT INTO `shipments`(`train_id`, `_date`, `status`, `capacity_left`) VALUES (1,'2018-12-21','delivered',50);
+INSERT INTO `shipments`(`train_id`, `_date`, `status`, `capacity_left`) VALUES (2,'2018-12-23','delivered',65);
+INSERT INTO `shipments`(`train_id`, `_date`, `status`, `capacity_left`) VALUES (3,'2018-12-23','processing',80);
+INSERT INTO `shipments`(`train_id`, `_date`, `status`, `capacity_left`) VALUES (5,'2018-12-25','processing',70);
+INSERT INTO `shipments`(`train_id`, `_date`, `status`, `capacity_left`) VALUES (4,'2018-12-25','processing',50);
 
-INSERT INTO `shipment_orders`(`shipment_id`, `order_id`) VALUES (1,1);
-INSERT INTO `shipment_orders`(`shipment_id`, `order_id`) VALUES (2,3);
-INSERT INTO `shipment_orders`(`shipment_id`, `order_id`) VALUES (2,4);
-INSERT INTO `shipment_orders`(`shipment_id`, `order_id`) VALUES (4,5);
-INSERT INTO `shipment_orders`(`shipment_id`, `order_id`) VALUES (5,2);
-INSERT INTO `shipment_orders`(`shipment_id`, `order_id`) VALUES (3,6);
+INSERT INTO `shipment_orders`(`shipment_id`, `order_id`, store_id) VALUES (1,1,1);
+INSERT INTO `shipment_orders`(`shipment_id`, `order_id`, store_id) VALUES (2,3,2);
+INSERT INTO `shipment_orders`(`shipment_id`, `order_id`, store_id) VALUES (2,4,3);
+INSERT INTO `shipment_orders`(`shipment_id`, `order_id`, store_id) VALUES (4,5,4);
+INSERT INTO `shipment_orders`(`shipment_id`, `order_id`, store_id) VALUES (5,2,5);
+INSERT INTO `shipment_orders`(`shipment_id`, `order_id`, store_id) VALUES (3,6,1);
 
 INSERT INTO `trucks`(`store_id`, `status`) VALUES (1,"available");
 INSERT INTO `trucks`(`store_id`, `status`) VALUES (1,"not available");
