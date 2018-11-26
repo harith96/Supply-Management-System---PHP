@@ -7,7 +7,7 @@
  */
 require_once ("../inc/pdo.inc.php");
 $pdo = getConnection("root","");
-$datetime = new DateTime('tomorrow');
+$datetime = new DateTime('today');
 $today = $datetime->format('w');
 if($today == 0){$today = 7;}
 $sql = "SELECT * FROM train_schedule WHERE _day>$today";
@@ -40,6 +40,7 @@ $rows = $stmt->fetchAll();
     <title>Ship Orders</title>
 </head>
 <body>
+<form action="ship.orders.php" method="post">
     <table class="striped" border = "1">
         <tr class="header">
             <td>Order ID</td>
@@ -73,6 +74,8 @@ $rows = $stmt->fetchAll();
         }
         ?>
     </table>
+    <input type="submit" value="submit" name="submit">
+</form>
 </body>
 </html>
 
