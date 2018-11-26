@@ -3,12 +3,13 @@
 <head>	
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
   <title>Shop</title>
 
 </head>
 <body>
 
-<div class="container-fluid" >
+<div class="container-fluid" align="center" >
 	<form id="cartForm" class="form-inline " method="post">
 
 		<div class="form-group">
@@ -19,6 +20,7 @@
 			</div>			
 		</div>
 		
+		<br>	
 				
 
 		<div class="form-group">
@@ -41,14 +43,14 @@
 <div class="container-fluid">
 	<br>
 
-	<table id="table" class="table table-sm" align="center" width="800">
+	<table id="table" class="table table-sm" align="center" border="1" width="800">
 	
 		<tr class="info">
-			<th align="center">Product ID</th>
-			<th align="center">Product Name</th>
-			<th align="center">Price</th>
-			<th align="center">Quantity</th>
-			<th align="center">Value</th>
+			<th>Product ID</th>
+			<th>Product Name</th>
+			<th>Price</th>
+			<th>Quantity</th>
+			<th>Value</th>
 		</tr>
 
 	</table>
@@ -57,22 +59,26 @@
 </div>
 </div>
 
-<div class="container-fluid" >
+<div class="container-fluid" align="center" >
 	<form id="orderForm" class="form-inline " >
 	
 		
 		
-		<label for="add_no">Address no  : </label>
+		<label for="add_no">Address no  : </label><br>
         <input type="text" name="add_no" id="add_no" required ><br>
+		<br>
 
-        <label for="street">Street  : </label>
+        <label for="street">Street  : </label><br>
         <input type="text" name="street" id="street" required><br>
+		<br>
 
-        <label for="city1">City 1  : </label>
+        <label for="city1">City 1  : </label><br>
         <input type="text" name="city1" id="city1" required><br>
+		<br>
 		
-		<label for="zip">ZIP  : </label>
+		<label for="zip">ZIP  : </label><br>
         <input type="text" name="zip" id="zip" required><br>
+		<br>
 
         <label for="city2">City 2  : </label>
         <select name="city2" id="city2">
@@ -88,20 +94,23 @@
 
         
 		
-		<h5> Select a route </h5>
+		
+		<label for="Select a route">Select a route : </label>
+		<select id="select-route" class="custom-select custom-select-sm my-1 mr-sm-2" name="select-route"></select>
 			
 		<div class="col-md-2">
-				<select id="select-route" class="custom-select custom-select-sm my-1 mr-sm-2" name="select-route">
-			</select>
+				
 		</div>		
 			
 		
 		<br>
+		<br>
+		<br>
 				
 
 			
-
-		<button type="submit" class="btn" id="sub-check" >Checkout</button>
+		
+		<button type="submit" class="btn btn-primary btn-sm" style="width: 50%;" id="sub-check" >Checkout</button>
 </form>
 
 <p id='err'></p>
