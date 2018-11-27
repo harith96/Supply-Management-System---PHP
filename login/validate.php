@@ -13,16 +13,16 @@ if(isset($_POST['email']) && isset($_POST['password'])) {
 
     require_once("../inc/pdo.inc.php");
     require_once("../inc/connection.inc.php");
-    $pdo = getConnection("root","");
+    $pdo = getConnection("guest","guest");
 
     if ((!(empty($email) || empty($password)) && filter_var($email, FILTER_VALIDATE_EMAIL))) {
         $hashed_password = sha1($password);
         try{
-        $sql = "SELECT * FROM users WHERE email = '$email' and password_hash = '$hashed_password'";
+        $sql = "SELECT * FROM login WHERE email = '$email' and password_hash = '$hashed_password'";
         $stmt = $pdo->prepare($sql);
         $stmt->execute();
         } catch(PDOException $e){
-            $stmt->errorInfo()[2];
+            echo $e->getMessage();
         }
         $num_rows = $stmt->rowCount();
         if ($num_rows) {
