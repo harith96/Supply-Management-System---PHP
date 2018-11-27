@@ -269,8 +269,28 @@
 	  END//
 	DELIMITER ;
 
+  DELIMITER //
+  CREATE PROCEDURE updateShipCapacity(ship_id INT,capacity INT)
+    BEGIN
+      DECLARE in_cap INT;
+      SELECT capacity_left INTO in_cap FROM shipments WHERE shipment_id = ship_id;
+      UPDATE shipments SET capacity_left = in_cap-capacity WHERE shipment_id = ship_id;
+    END//
+  DELIMITER ;
 	-- VIEWS --
-	CREATE VIEW orders_details AS SELECT o.order_id, o.route_id, SUM(tot_capacity(qty,capacity)) AS total_capacity  FROM orders o LEFT JOIN products_ordered po on o.order_id = po.order_id LEFT JOIN products p on po.product_id = p.product_id GROUP BY o.order_id;
+	CREATE VIEW orders_details AS SELECT o.order_id, o.route_id, o.city2, SUM(tot_capacity(qty,capacity)) AS total_capacity,o.status  FROM orders o LEFT JOIN products_ordered po on o.order_id = po.order_id LEFT JOIN products p on po.product_id = p.product_id GROUP BY o.order_id;
+	CREATE VIEW trains_details AS SELECT ts.train_id,ts._day,ts._time,ts.capacity,tc.city FROM train_schedule ts LEFT JOIN train_cities tc ON ts.train_id = tc.train_id;
+	CREATE VIEW login AS SELECT user_id,email,password_hash,_type FROM users;
 
+	-- PRIVILEGES --
+	CREATE USER 'admin''@''localhost' IDENTIFIED BY 'admin';
+  GRANT ALL PRIVILEGES ON * TO 'admin'@'localhost' IDENTIFIED BY 'admin';
 
+  CREATE USER 'customer''@''localhost' IDENTIFIED BY 'customer';
+  GRANT ALL PRIVILEGES ON * TO 'admin'@'localhost' IDENTIFIED BY 'customer';
 
+  CREATE USER 'employee''@''localhost' IDENTIFIED BY 'employee';
+  GRANT ALL PRIVILEGES ON * TO 'admin'@'localhost' IDENTIFIED BY 'employee';
+
+  CREATE USER 'guest''@''localhost' IDENTIFIED BY 'guest';
+  GRANT SELECT ON login TO 'guest'@'localhost' IDENTIFIED BY 'guest';
