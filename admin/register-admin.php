@@ -5,24 +5,23 @@
  * Date: 11/27/2018
  * Time: 7:36 PM
  */
-require_once ("../Inc/connection.inc.php");
+require_once ("Inc/connection.inc.php");
 
 session_start();
-require_once('../include/connection.inc.php');
 
 if (isset($_POST['submit'])) {
-    $salutation = $_POST['salutation'];
-    $full_name = $_POST['full_name'];
-    $ini_name = $_POST['ini_name'];
+    $fname = $_POST['fname'];
+    $lname = $_POST['lname'];
     $nic = $_POST['nic'];
     $email = $_POST['email'];
-    $address = $_POST['address'];
-    $tele_no = $_POST['tele_no'];
-    $mobile_no = $_POST['mobile_no'];
-    $password = sha1($nic);
+    $add_no = $_POST['add_no'];
+    $street = $_POST['street'];
+    $city1 = $_POST['city1'];
+    $city2 = $_POST['city2'];
+    $zip = $_POST['zip'];
+    $password = $_POST['password'];
 
-    if (empty($full_name) or empty($ini_name) or empty($nic) or empty($email) or empty($address) or empty($tele_no) or empty($mobile_no)) {
-        autofill($salutation,$full_name,$ini_name,$nic,$email,$address,$tele_no,$mobile_no);
+    if (empty($fname) or empty($ini_name) or empty($nic) or empty($email) or empty($address) or empty($tele_no) or empty($mobile_no)) {
         $_SESSION['admin_reg'] = 'empty';
         header("Location: registration.admin.php");
     }
