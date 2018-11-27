@@ -76,14 +76,14 @@
 	);
 
 	CREATE TABLE IF NOT EXISTS sales_data(
+		sales_id INT(10) PRIMARY KEY AUTO_INCREMENT,
 		product_id INT(10) NOT NULL,
 		_date DATE  NOT NULL,
 		city VARCHAR(20) NOT NULL,
 		route_id INT(10) NOT NULL,
 		item_sold INT(5) NOT NULL,
 		FOREIGN KEY (product_id) REFERENCES products(product_id) ON DELETE CASCADE ON UPDATE CASCADE,
-		FOREIGN KEY (route_id) REFERENCES routes(route_id) ON DELETE CASCADE ON UPDATE CASCADE,
-		PRIMARY KEY (product_id,_date,route_id)
+		FOREIGN KEY (route_id) REFERENCES routes(route_id) ON DELETE CASCADE ON UPDATE CASCADE
 	);
 
 	CREATE TABLE IF NOT EXISTS orders(
@@ -128,26 +128,26 @@
 	CREATE TABLE IF NOT EXISTS shipments(
 		shipment_id INT(10) PRIMARY KEY AUTO_INCREMENT,
 		train_id INT(10) NOT NULL,
+		store_id INT(10) NOT NULL,
 		_date DATE NOT NULL,
 		status ENUM("processing","delivered") NOT NULL,
 		capacity_left FLOAT(12,2) NOT NULL,
-		FOREIGN KEY (train_id) REFERENCES train_schedule(train_id)
+		FOREIGN KEY (train_id) REFERENCES train_schedule(train_id),
+		FOREIGN KEY (store_id) REFERENCES stores(store_id)
 	);
 
 	CREATE TABLE IF NOT EXISTS shipment_orders(
 		shipment_id INT(10),
 		order_id INT(10),
-			store_id INT(10) NOT NULL,
 		FOREIGN KEY (shipment_id) REFERENCES shipments(shipment_id),
 		FOREIGN KEY (order_id) REFERENCES orders(order_id),
-		PRIMARY KEY (shipment_id,order_id),
-		FOREIGN KEY (store_id) REFERENCES stores(store_id)
+		PRIMARY KEY (shipment_id,order_id)
 	);
 
 	CREATE TABLE IF NOT EXISTS trucks(
 		truck_id INT(10) AUTO_INCREMENT,
 		store_id INT(10) NOT NULL,
-		status VARCHAR(20) NOT NULL,
+		status VARCHAR(10) NOT NULL,
 		PRIMARY KEY (truck_id),
 		FOREIGN KEY (store_id) REFERENCES stores(store_id)
 	);
@@ -164,6 +164,7 @@
 		truck_trip_id INT(10) PRIMARY KEY AUTO_INCREMENT,
 		truck_id INT(10) NOT NULL,
 		_date DATE NOT NULL,
+		_time TIME NOT NULL,
 		status VARCHAR(10) NOT NULL,
 		driver_id INT(10) NOT NULL,
 		assistant_id INT(10) NOT NULL,
@@ -262,52 +263,14 @@
 	
 	-- FUNCTIONS --
 	DELIMITER //
-	CREATE FUNCTION IF NOT EXISTS tot_capacity (qty INT, capacity INT) RETURNS INT
+	CREATE FUNCTION tot_capacity (qty INT, capacity INT) RETURNS INT
 	  BEGIN
 	    RETURN qty*capacity;
 	  END//
 	DELIMITER ;
 
-	DELIMITER //
-	CREATE FUNCTION IF NOT EXISTS getStoreId(o_id INT) RETURNS INT
-	  BEGIN
-	    DECLARE s_id INT;
-	    SELECT stores.store_id INTO s_id FROM stores INNER JOIN orders ON orders.city2 = stores.city WHERE orders.order_id = o_id;
-	    RETURN s_id;
-	  END//
-	DELIMITER ;
-
-	-- PROCEDURES --
-	DELIMITER //
-	CREATE PROCEDURE getShipmentInfo(t_id INT, _date DATE)
-    BEGIN
-      SELECT * FROM shipments WHERE train_id = t_id and _date = _date;
-    END//
-  DELIMITER ;
-
-  DELIMITER //
-  CREATE PROCEDURE updateShipCapacity(ship_id INT,capacity INT)
-    BEGIN
-      DECLARE in_cap INT;
-      SELECT capacity_left INTO in_cap FROM shipments WHERE shipment_id = ship_id;
-      UPDATE shipments SET capacity_left = in_cap-capacity WHERE shipment_id = ship_id;
-    END//
-  DELIMITER ;
 	-- VIEWS --
-	CREATE VIEW orders_details AS SELECT o.order_id, o.route_id, o.city2, SUM(tot_capacity(qty,capacity)) AS total_capacity,o.status  FROM orders o LEFT JOIN products_ordered po on o.order_id = po.order_id LEFT JOIN products p on po.product_id = p.product_id GROUP BY o.order_id;
-	CREATE VIEW trains_details AS SELECT ts.train_id,ts._day,ts._time,ts.capacity,tc.city FROM train_schedule ts LEFT JOIN train_cities tc ON ts.train_id = tc.train_id;
-	CREATE VIEW login AS SELECT user_id,email,password_hash,_type FROM users;
+	CREATE VIEW orders_details AS SELECT o.order_id, o.route_id, SUM(tot_capacity(qty,capacity)) AS total_capacity  FROM orders o LEFT JOIN products_ordered po on o.order_id = po.order_id LEFT JOIN products p on po.product_id = p.product_id GROUP BY o.order_id;
 
-	-- PRIVILEGES --
-	CREATE USER 'admin''@''localhost' IDENTIFIED BY 'admin';
-  GRANT ALL PRIVILEGES ON * TO 'admin'@'localhost' IDENTIFIED BY 'admin';
 
-  CREATE USER 'customer''@''localhost' IDENTIFIED BY 'customer';
-  GRANT ALL PRIVILEGES ON * TO 'admin'@'localhost' IDENTIFIED BY 'customer';
-
-  CREATE USER 'employee''@''localhost' IDENTIFIED BY 'employee';
-  GRANT ALL PRIVILEGES ON * TO 'admin'@'localhost' IDENTIFIED BY 'employee';
-
-  CREATE USER 'guest''@''localhost' IDENTIFIED BY 'guest';
-  GRANT SELECT ON login TO 'guest'@'localhost' IDENTIFIED BY 'guest';
 
