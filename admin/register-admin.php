@@ -5,5 +5,6 @@
  * Date: 11/27/2018
  * Time: 7:36 PM
  */
+require_once ("../Inc/connection.inc.php");
 
 ?>
