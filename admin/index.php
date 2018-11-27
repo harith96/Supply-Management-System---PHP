@@ -1,4 +1,7 @@
-
+<?php
+require_once("../inc/check.login.php");
+checkLogin("admin");
+?>
 <!doctype html>
 <html lang="en">
   <head>
