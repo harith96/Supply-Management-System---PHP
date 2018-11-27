@@ -6,7 +6,7 @@
  * Time: 1:17 AM
  */
 require_once("../inc/pdo.inc.php");
-$pdo = getConnection("root","");
+$pdo = getConnection("admin","admin");
 if(isset($_POST['submit'])) {
     unset($_POST['submit']);
     foreach ($_POST as $key => $value) {

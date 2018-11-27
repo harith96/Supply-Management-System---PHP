@@ -7,7 +7,7 @@
  */
 require_once ("../inc/pdo.inc.php");
 session_start();
-$pdo = getConnection("root","");
+$pdo = getConnection("admin","admin");
 
 if (isset($_POST['submit'])) {
     $first_name = $_POST['first_name'];

@@ -6,7 +6,7 @@
  * Time: 4:37 PM
  */
 require_once ("../inc/pdo.inc.php");
-$pdo = getConnection("root","");
+$pdo = getConnection("admin","admin");
 $datetime = new DateTime('today');
 $today = $datetime->format('w');
 if($today == 0){$today = 7;}

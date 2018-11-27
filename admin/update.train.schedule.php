@@ -6,12 +6,7 @@
  * Time: 7:17 PM
  */
 require_once ("../inc/pdo.inc.php");
-$pdo = getConnection("root","");
-
-echo "<pre>";
-print_r($_POST);
-echo "</pre>";
-
+$pdo = getConnection("admin","admin");
 
 if(isset($_POST['submit'])){
     $yr = $_POST['year'];
