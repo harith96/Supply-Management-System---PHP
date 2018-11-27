@@ -40,7 +40,6 @@ $rows = $stmt->fetchAll();
     <title>Ship Orders</title>
 </head>
 <body>
-<form action="ship.orders.php" method="post">
     <table class="striped" border = "1">
         <tr class="header">
             <td>Order ID</td>
@@ -48,11 +47,12 @@ $rows = $stmt->fetchAll();
             <td>Total Capacity</td>
             <td>train ID</td>
             <td>capacity left</td>
+            <td></td>
         </tr>
-
         <?php
         foreach($rows as $row){
             echo "<tr>";
+            echo "<form action=\"ship.orders.php?cap=".$row['total_capacity']."\" method=\"post\">";
             echo "<td>".$row["order_id"]."</td>";
             echo "<td>".$row["route_id"]."</td>";
             echo "<td>".$row["total_capacity"]."</td>";
@@ -69,13 +69,28 @@ $rows = $stmt->fetchAll();
                         echo "<option value='".$train['train_id']."'>".$train['train_id']."</option>";}
                     }
                 echo "</select>";
-            echo "<td>";
-            echo "</tr>";
+            echo "</td>";
+            echo "<td></td>";
+            echo "<td><input type=\"submit\" value=\"ship\" name=\"submit\"></td>";
+            echo "</form></tr>";
         }
         ?>
     </table>
-    <input type="submit" value="submit" name="submit">
-</form>
+    <?php
+        if(isset($_SESSION['ship'])){
+            if($_SESSION['ship'] = "error"){
+                echo "Error!";
+            }
+            elseif($_SESSION['ship'] = "terror"){
+                echo "Transaction Error";
+            }
+            else{
+                echo "shipped successfully!";
+            }
+            unset($_SESSION['ship']);
+        }
+    ?>
+
 </body>
 </html>
 

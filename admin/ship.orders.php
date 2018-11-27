@@ -6,20 +6,67 @@
  * Time: 1:17 AM
  */
 require_once("../inc/pdo.inc.php");
-
+$pdo = getConnection("root","");
 if(isset($_POST['submit'])) {
     unset($_POST['submit']);
-    $ship_check = [];
     foreach ($_POST as $key => $value) {
-        if (!array_search($value, $ship_check)) {
-            $sql = "SELECT * FROM shipments WHERE train_id = ?";
+        try{
+            $sql = "SELECT _day FROM train_schedule WHERE train_id = ?";
+            $query = $pdo->prepare($sql);
+            $query->execute(array($value));
+            $result = $query->fetch();
+            $gendate = new DateTime();
+            $gendate->setISODate(date("y"),date("w"), $result['_day']); //year , week num , day
+            $_date = $gendate->format('d-m-Y');
+
+            $sql = "SELECT total_capacity FROM orders_details WHERE order_id = ?";
+            $query = $pdo->prepare($sql);
+            $query->execute(array($key));
+            $result = $query->fetch();
+            $tot_capacity = $result['total_capacity'];
+
+            $sql = "CALL getShipmentInfo(?,$_date)";
             $stmt = $pdo->prepare($sql);
             $stmt->execute(array($value));
-
-            $sql = "SELECT _day FROM train_schedule";
             if (!$stmt->rowCount()) {
-                $sql = "INSERT INTO shipments (shipment_id,train_id,_date,status,capacity_left) VALUES ()";
+                $sql = "INSERT INTO shipments (train_id,_date,status,capacity_left) VALUES (?,$_date,'processing',500)";
+                $stmt = $pdo->prepare($sql);
+                $stmt->execute(array($value));
+
+                $sql = "CALL getShipmentInfo(?,$_date)";
+                $stmt = $pdo->prepare($sql);
+                $stmt->execute(array($value));
             }
+            $ship_id = $stmt->fetch()['shipment_id'];
+            $stmt = null;
+            try {
+                $pdo->beginTransaction();
+                $sql = "INSERT INTO shipment_orders (shipment_id,order_id,store_id) VALUES (?,?,getStoreId(?))";
+                $stmt = $pdo->prepare($sql);
+                $stmt->execute(array($ship_id, $key,$key));
+
+                $sql = "CALL updateShipCapacity(?,?)";
+                $stmt = $pdo->prepare($sql);
+                $stmt->execute(array($ship_id, $tot_capacity));
+
+                $sql = "UPDATE orders SET status = 'shipped' WHERE order_id=?";
+                $stmt = $pdo->prepare($sql);
+                $stmt->execute(array($key));
+
+                $pdo->commit();
+
+            }catch(PDOException $e){
+                $pdo->rollBack();
+                echo $e->getMessage();
+                die();
+            }
+
+            $_SESSION['ship'] = "successful";
+            header("Location: ship.orders.front.php");
+        }
+        catch (PDOException $e){
+            echo $e->getMessage();
+            die();
         }
     }
 }

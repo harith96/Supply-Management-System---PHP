@@ -263,12 +263,37 @@
 	
 	-- FUNCTIONS --
 	DELIMITER //
-	CREATE FUNCTION tot_capacity (qty INT, capacity INT) RETURNS INT
+	CREATE FUNCTION IF NOT EXISTS tot_capacity (qty INT, capacity INT) RETURNS INT
 	  BEGIN
 	    RETURN qty*capacity;
 	  END//
 	DELIMITER ;
 
+	DELIMITER //
+	CREATE FUNCTION IF NOT EXISTS getStoreId(o_id INT) RETURNS INT
+	  BEGIN
+	    DECLARE s_id INT;
+	    SELECT stores.store_id INTO s_id FROM stores INNER JOIN orders ON orders.city2 = stores.city WHERE orders.order_id = o_id;
+	    RETURN s_id;
+	  END//
+	DELIMITER ;
+
+	-- PROCEDURES --
+	DELIMITER //
+	CREATE PROCEDURE getShipmentInfo(t_id INT, _date DATE)
+    BEGIN
+      SELECT * FROM shipments WHERE train_id = t_id and _date = _date;
+    END//
+  DELIMITER ;
+
+  DELIMITER //
+  CREATE PROCEDURE updateShipCapacity(ship_id INT,capacity INT)
+    BEGIN
+      DECLARE in_cap INT;
+      SELECT capacity_left INTO in_cap FROM shipments WHERE shipment_id = ship_id;
+      UPDATE shipments SET capacity_left = in_cap-capacity WHERE shipment_id = ship_id;
+    END//
+  DELIMITER ;
 	-- VIEWS --
 	CREATE VIEW orders_details AS SELECT o.order_id, o.route_id, o.city2, SUM(tot_capacity(qty,capacity)) AS total_capacity,o.status  FROM orders o LEFT JOIN products_ordered po on o.order_id = po.order_id LEFT JOIN products p on po.product_id = p.product_id GROUP BY o.order_id;
 	CREATE VIEW trains_details AS SELECT ts.train_id,ts._day,ts._time,ts.capacity,tc.city FROM train_schedule ts LEFT JOIN train_cities tc ON ts.train_id = tc.train_id;

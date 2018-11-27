@@ -12,7 +12,7 @@ function getConnection($user,$pass){
     $password = $pass;
 
     try {
-        $pdo = new PDO("mysql:host=$servername;dbname=sms", $username, $password);
+        $pdo = new PDO("mysql:host=$servername;dbname=sms", $username, $password,array(PDO::ATTR_EMULATE_PREPARES => false));
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         return $pdo;
     }
