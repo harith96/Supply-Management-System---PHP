@@ -1,18 +1,18 @@
-INSERT INTO `users`(`_type`, `first_name`, `last_name`, `email`, `nic`, `add_no`, `street`, `city1`, `city2`, `zip`, `password_hash`) VALUES ("customer","Maduranga","Wijesiri","maduranga.official@gmail.com","957463556V","1/152","minuwangoda road","Bolawalana","Maradagahamula",26354,sha1(10));
-INSERT INTO `users`(`_type`, `first_name`, `last_name`, `email`, `nic`, `add_no`, `street`, `city1`, `city2`, `zip`, `password_hash`) VALUES ("customer","Sankalpa","Sankalpa","sankalpa.official@gmail.com","966376859V","1/252","angoda road","Bolawalana","Gampaha",46374,sha1(10));
-INSERT INTO `users`(`_type`, `first_name`, `last_name`, `email`, `nic`, `add_no`, `street`, `city1`, `city2`, `zip`, `password_hash`) VALUES ("customer","Buddhi","Buddhi","buddmhi.official@gmail.com","964635278V","1/262","koswaththa road","Bolawalana","kandy",16253,sha1(10));
-INSERT INTO `users`(`_type`, `first_name`, `last_name`, `email`, `nic`, `add_no`, `street`, `city1`, `city2`, `zip`, `password_hash`) VALUES ("customer","kaumini","kavishka","kahumini.official@gmail.com","966493728V","1/362","diulapitiya road","Bolawalana","Negombo",16253,sha1(10));
-INSERT INTO `users`(`_type`, `first_name`, `last_name`, `email`, `nic`, `add_no`, `street`, `city1`, `city2`, `zip`, `password_hash`) VALUES ("customer","kashuni","kashew","kashuni.official2@gmail.com","966453027V","1/343","kuliyapitiya road","kollupitiya","colambo",16253,sha1(10));
+INSERT INTO `users`(`_type`, `first_name`, `last_name`, `email`, `nic`, `add_no`, `street`, `city1`, `city2`, `zip`, `password_hash`) VALUES ("customer","Maduranga","Wijesiri","maduranga.official@gmail.com","957463556V","1/152","minuwangoda road","Bolawalana","Maradagahamula",26354,SHA1(10));
+INSERT INTO `users`(`_type`, `first_name`, `last_name`, `email`, `nic`, `add_no`, `street`, `city1`, `city2`, `zip`, `password_hash`) VALUES ("customer","Sankalpa","Sankalpa","sankalpa.official@gmail.com","966376859V","1/252","angoda road","Bolawalana","Gampaha",46374,SHA1(10));
+INSERT INTO `users`(`_type`, `first_name`, `last_name`, `email`, `nic`, `add_no`, `street`, `city1`, `city2`, `zip`, `password_hash`) VALUES ("customer","Buddhi","Buddhi","buddmhi.official@gmail.com","964635278V","1/262","koswaththa road","Bolawalana","kandy",16253,SHA1(10));
+INSERT INTO `users`(`_type`, `first_name`, `last_name`, `email`, `nic`, `add_no`, `street`, `city1`, `city2`, `zip`, `password_hash`) VALUES ("customer","kaumini","kavishka","kahumini.official@gmail.com","966493728V","1/362","diulapitiya road","Bolawalana","Negombo",16253,SHA1(10));
+INSERT INTO `users`(`_type`, `first_name`, `last_name`, `email`, `nic`, `add_no`, `street`, `city1`, `city2`, `zip`, `password_hash`) VALUES ("customer","kashuni","kashew","kashuni.official2@gmail.com","966453027V","1/343","kuliyapitiya road","kollupitiya","colambo",16253,SHA1(10));
 
-INSERT INTO `users` (`user_id`, `_type`, `first_name`, `last_name`, `email`, `nic`, `add_no`, `street`, `city1`, `city2`, `zip`, `password_hash`) VALUES (NULL, 'employee', 'abc', 'cde', 'abc11@gmail.com', '123456780V', '92/D', 'Ovitigama', 'Pugoda', NULL, '10660', sha1('123'));
-INSERT INTO `users` (`user_id`, `_type`, `first_name`, `last_name`, `email`, `nic`, `add_no`, `street`, `city1`, `city2`, `zip`, `password_hash`) VALUES (NULL, 'employee', 'abc1', 'cde1', 'abc12@gmail.com', '223456789V', '92/D', 'Ovitigama', 'Pugoda', NULL, '10660', sha1('123'));
-INSERT INTO `users` (`user_id`, `_type`, `first_name`, `last_name`, `email`, `nic`, `add_no`, `street`, `city1`, `city2`, `zip`, `password_hash`) VALUES (NULL, 'employee', 'abc2', 'cde2', 'abc22@gmail.com', '323456789V', '92/D', 'Ovitigama', 'Pugoda', NULL, '10660', sha1('123'));
-INSERT INTO `users` (`user_id`, `_type`, `first_name`, `last_name`, `email`, `nic`, `add_no`, `street`, `city1`, `city2`, `zip`, `password_hash`) VALUES (NULL, 'employee', 'abc3', 'cde3', 'abc33@gmail.com', '423456789V', '92/D', 'Ovitigama', 'Pugoda', NULL, '10660', sha1('123'));
-INSERT INTO `users` (`user_id`, `_type`, `first_name`, `last_name`, `email`, `nic`, `add_no`, `street`, `city1`, `city2`, `zip`, `password_hash`) VALUES (NULL, 'employee', 'abc4', 'cde4', 'abc44@gmail.com', '523456789V', '92/D', 'Ovitigama', 'Pugoda', NULL, '10660', sha1('123'));
+INSERT INTO `users` (`user_id`, `_type`, `first_name`, `last_name`, `email`, `nic`, `add_no`, `street`, `city1`, `city2`, `zip`, `password_hash`) VALUES (NULL, 'employee', 'abc', 'cde', 'abc11@gmail.com', '123456780V', '92/D', 'Ovitigama', 'Pugoda', NULL, '10660', SHA1('123'));
+INSERT INTO `users` (`user_id`, `_type`, `first_name`, `last_name`, `email`, `nic`, `add_no`, `street`, `city1`, `city2`, `zip`, `password_hash`) VALUES (NULL, 'employee', 'abc1', 'cde1', 'abc12@gmail.com', '223456789V', '92/D', 'Ovitigama', 'Pugoda', NULL, '10660', SHA1('123'));
+INSERT INTO `users` (`user_id`, `_type`, `first_name`, `last_name`, `email`, `nic`, `add_no`, `street`, `city1`, `city2`, `zip`, `password_hash`) VALUES (NULL, 'employee', 'abc2', 'cde2', 'abc22@gmail.com', '323456789V', '92/D', 'Ovitigama', 'Pugoda', NULL, '10660', SHA1('123'));
+INSERT INTO `users` (`user_id`, `_type`, `first_name`, `last_name`, `email`, `nic`, `add_no`, `street`, `city1`, `city2`, `zip`, `password_hash`) VALUES (NULL, 'employee', 'abc3', 'cde3', 'abc33@gmail.com', '423456789V', '92/D', 'Ovitigama', 'Pugoda', NULL, '10660', SHA1('123'));
+INSERT INTO `users` (`user_id`, `_type`, `first_name`, `last_name`, `email`, `nic`, `add_no`, `street`, `city1`, `city2`, `zip`, `password_hash`) VALUES (NULL, 'employee', 'abc4', 'cde4', 'abc44@gmail.com', '523456789V', '92/D', 'Ovitigama', 'Pugoda', NULL, '10660', SHA1('123'));
 
-INSERT INTO `users`(`_type`, `first_name`, `last_name`, `email`, `nic`, `add_no`, `street`, `city1`, `city2`, `zip`, `password_hash`) VALUES ('admin','Isuru','Wijesiri','Isuru.official@gmail.com','957463526V','1/152','kelaniya road','kelaniya','Colombo',26354,sha1(10));
-INSERT INTO `users`(`_type`, `first_name`, `last_name`, `email`, `nic`, `add_no`, `street`, `city1`, `city2`, `zip`, `password_hash`) VALUES ('admin','Harith','Sankalpa','Harith.official@gmail.com','964374859V','1/252','angoda road','asgiriya','Gampaha',46374,sha1(10));
-INSERT INTO `users`(`_type`, `first_name`, `last_name`, `email`, `nic`, `add_no`, `street`, `city1`, `city2`, `zip`, `password_hash`) VALUES ('admin','Kawwa','kavi','kawwa.official@gmail.com','964635673V','1/262','koswaththa road','Bolawalana','Ampara',16253,sha1(10));
+INSERT INTO `users`(`_type`, `first_name`, `last_name`, `email`, `nic`, `add_no`, `street`, `city1`, `city2`, `zip`, `password_hash`) VALUES ('admin','Isuru','Wijesiri','Isuru.official@gmail.com','957463526V','1/152','kelaniya road','kelaniya','Colombo',26354,SHA1(10));
+INSERT INTO `users`(`_type`, `first_name`, `last_name`, `email`, `nic`, `add_no`, `street`, `city1`, `city2`, `zip`, `password_hash`) VALUES ('admin','Harith','Sankalpa','Harith.official@gmail.com','964374859V','1/252','angoda road','asgiriya','Gampaha',46374,SHA1(10));
+INSERT INTO `users`(`_type`, `first_name`, `last_name`, `email`, `nic`, `add_no`, `street`, `city1`, `city2`, `zip`, `password_hash`) VALUES ('admin','Kawwa','kavi','kawwa.official@gmail.com','964635673V','1/262','koswaththa road','Bolawalana','Ampara',16253,SHA1(10));
 
 INSERT INTO `phone`(`user_id`, `phone`) VALUES (1,'0763546374');
 INSERT INTO `phone`(`user_id`, `phone`) VALUES (2,'0772636374');
@@ -71,7 +71,21 @@ INSERT INTO `sales_data`(`product_id`, `_date`, `city`, `route_id`, `item_sold`)
 INSERT INTO `sales_data`(`product_id`, `_date`, `city`, `route_id`, `item_sold`) VALUES (4,'2018-11-25','trinco',4,8);
 INSERT INTO `sales_data`(`product_id`, `_date`, `city`, `route_id`, `item_sold`) VALUES (2,'2018-11-27','negombo',2,3);
 INSERT INTO `sales_data`(`product_id`, `_date`, `city`, `route_id`, `item_sold`) VALUES (3,'2018-11-28','jaffna',6,10);
-
+INSERT INTO `sales_data`(`product_id`, `_date`, `city`, `route_id`, `item_sold`) VALUES (1,'2018-01-21','colombo',1,5);
+INSERT INTO `sales_data`(`product_id`, `_date`, `city`, `route_id`, `item_sold`) VALUES (2,'2018-02-22','colombo',1,10);
+INSERT INTO `sales_data`(`product_id`, `_date`, `city`, `route_id`, `item_sold`) VALUES (5,'2018-05-24','matara',4,15);
+INSERT INTO `sales_data`(`product_id`, `_date`, `city`, `route_id`, `item_sold`) VALUES (3,'2018-06-24','galle',3,7);
+INSERT INTO `sales_data`(`product_id`, `_date`, `city`, `route_id`, `item_sold`) VALUES (4,'2018-12-25','trinco',4,8);
+INSERT INTO `sales_data`(`product_id`, `_date`, `city`, `route_id`, `item_sold`) VALUES (2,'2018-07-27','negombo',2,3);
+INSERT INTO `sales_data`(`product_id`, `_date`, `city`, `route_id`, `item_sold`) VALUES (3,'2018-09-28','jaffna',6,10);
+INSERT INTO `sales_data`(`product_id`, `_date`, `city`, `route_id`, `item_sold`) VALUES (1,'2018-03-21','colombo',1,5);
+INSERT INTO `sales_data`(`product_id`, `_date`, `city`, `route_id`, `item_sold`) VALUES (2,'2018-04-22','colombo',1,10);
+INSERT INTO `sales_data`(`product_id`, `_date`, `city`, `route_id`, `item_sold`) VALUES (5,'2018-08-24','matara',4,15);
+INSERT INTO `sales_data`(`product_id`, `_date`, `city`, `route_id`, `item_sold`) VALUES (3,'2018-10-24','galle',3,7);
+INSERT INTO `sales_data`(`product_id`, `_date`, `city`, `route_id`, `item_sold`) VALUES (4,'2018-01-25','trinco',4,8);
+INSERT INTO `sales_data`(`product_id`, `_date`, `city`, `route_id`, `item_sold`) VALUES (2,'2018-07-27','negombo',2,3);
+INSERT INTO `sales_data`(`product_id`, `_date`, `city`, `route_id`, `item_sold`) VALUES (3,'2018-05-28','jaffna',6,10);
+ 
 INSERT INTO `orders`(`order_id`,`customer`, `add_no`, `street`, `city1`, `city2`, `zip`, `route_id`, `delivery_date`, `_value`, `status`) VALUES (1,1,'152/1','sdfsfsdf','dsfsfd','colombo',23,1,'2018-11-27',25,'processing');
 INSERT INTO `orders`(`order_id`,`customer`, `add_no`, `street`, `city1`, `city2`, `zip`, `route_id`, `delivery_date`, `_value`, `status`) VALUES (2,3,'34/2','sdfsfdsfsdf','bjds','negombo',76,2,'2018-12-03',75,'processing');
 INSERT INTO `orders`(`order_id`,`customer`, `add_no`, `street`, `city1`, `city2`, `zip`, `route_id`, `delivery_date`, `_value`, `status`) VALUES (3,2,'156/2','sdfsffbsdf','dsfsdf','galle',34,1,'2018-12-04',55,'processing');
