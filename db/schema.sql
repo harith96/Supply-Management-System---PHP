@@ -128,20 +128,21 @@
 	CREATE TABLE IF NOT EXISTS shipments(
 		shipment_id INT(10) PRIMARY KEY AUTO_INCREMENT,
 		train_id INT(10) NOT NULL,
-		store_id INT(10) NOT NULL,
+
 		_date DATE NOT NULL,
 		status ENUM("processing","delivered") NOT NULL,
 		capacity_left FLOAT(12,2) NOT NULL,
-		FOREIGN KEY (train_id) REFERENCES train_schedule(train_id),
-		FOREIGN KEY (store_id) REFERENCES stores(store_id)
+		FOREIGN KEY (train_id) REFERENCES train_schedule(train_id)
 	);
 
 	CREATE TABLE IF NOT EXISTS shipment_orders(
 		shipment_id INT(10),
 		order_id INT(10),
+		store_id INT(10) NOT NULL,
 		FOREIGN KEY (shipment_id) REFERENCES shipments(shipment_id),
 		FOREIGN KEY (order_id) REFERENCES orders(order_id),
-		PRIMARY KEY (shipment_id,order_id)
+		PRIMARY KEY (shipment_id,order_id),
+		FOREIGN KEY (store_id) REFERENCES stores(store_id)
 	);
 
 	CREATE TABLE IF NOT EXISTS trucks(
