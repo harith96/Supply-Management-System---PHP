@@ -164,7 +164,6 @@
 		truck_trip_id INT(10) PRIMARY KEY AUTO_INCREMENT,
 		truck_id INT(10) NOT NULL,
 		_date DATE NOT NULL,
-		_time TIME NOT NULL,
 		status VARCHAR(10) NOT NULL,
 		driver_id INT(10) NOT NULL,
 		assistant_id INT(10) NOT NULL,
