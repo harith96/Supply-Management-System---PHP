@@ -6,8 +6,6 @@
  * Time: 7:36 PM
  */
 require_once ("../inc/pdo.inc.php");
-require_once ("../inc/check.login.php");
-checkLogin("admin");
 session_start();
 $pdo = getConnection("admin","admin");
 
