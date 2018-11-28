@@ -268,4 +268,6 @@
 			END
 	//
 	delimiter ;
+	
+	GRANT USAGE ON * TO customer IDENTIFIED BY customer123;
 
