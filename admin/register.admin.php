@@ -39,7 +39,7 @@ if (isset($_POST['submit'])) {
     } else {
         $hashed_pass = sha1($password);
         try{
-            $sql = "INSERT INTO users (first_name,last_name,nic,email,add_no,street,city1,city2,zip,password_hash) VALUES (:first_name,:last_name,:nic,:email,:add_no,:street,:city1,:city2,:zip,:hashed_pass)";
+            $sql = "INSERT INTO users (first_name,last_name,nic,email,add_no,street,city1,city2,zip,password_hash,_type) VALUES (:first_name,:last_name,:nic,:email,:add_no,:street,:city1,:city2,:zip,:hashed_pass,:_type)";
             $stmt = $pdo->prepare($sql);
             $stmt->execute(array(
                 ":first_name" => $first_name,
@@ -51,7 +51,8 @@ if (isset($_POST['submit'])) {
                 ":city1" => $city1,
                 ":city2" => $city2,
                 ":zip" => $zip,
-                ":hashed_pass" => $hashed_pass
+                ":hashed_pass" => $hashed_pass,
+                ":_type" => "admin"
             ));
             if($stmt){
                 echo "Successful";
