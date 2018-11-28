@@ -11,11 +11,21 @@ if(isset($_POST['email']) && isset($_POST['password'])) {
     $email = trim($_POST['email']);
     $password = $_POST['password'];
 
-    require_once("../include/connection.inc.php");
+    require_once("../inc/connection.inc.php");
+    $pdo = getConnection("root","");
+
     if ((!(empty($email) || empty($password)) && filter_var($email, FILTER_VALIDATE_EMAIL))) {
         $hashed_password = sha1($password);
-        $query = "SELECT * FROM super_table WHERE email = '" . mysqli_real_escape_string($connection, $email) . "' and password = '" . mysqli_real_escape_string($connection, $hashed_password) . "'";
-        $result = mysqli_query($connection, $query);
+        try{
+        $sql = "SELECT * FROM user WHERE email = ':email' and password = $hashed_password";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute(array(
+            ":email" => $email
+        ));
+        } catch(PDOException $e){
+            $stmt->errorInfo()[2];
+        }
+        $result = $stmt->rowCount();
         if (mysqli_num_rows($result)) {
             $array = mysqli_fetch_assoc($result);
             $_SESSION['uid'] = $array['uid'];
