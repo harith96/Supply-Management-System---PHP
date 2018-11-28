@@ -49,7 +49,10 @@ $rows = $stmt->fetchAll();
             echo "<td>".$row["total_capacity"]."</td>";
             echo "<td>";
                 echo  "<select name='".$row["order_id"]."'>";
-                    foreach($trains as $train){echo "<option value='".$train['train_id']."'>".$train['train_id']."</option>";}
+                    foreach($trains as $train){
+
+                        echo "<option value='".$train['train_id']."'>".$train['train_id']."</option>";
+                    }
                 echo "</select>";
             echo "<td>";
             echo "</tr>";

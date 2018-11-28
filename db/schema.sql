@@ -270,7 +270,8 @@
 	DELIMITER ;
 
 	-- VIEWS --
-	CREATE VIEW orders_details AS SELECT o.order_id, o.route_id, SUM(tot_capacity(qty,capacity)) AS total_capacity,o.status  FROM orders o LEFT JOIN products_ordered po on o.order_id = po.order_id LEFT JOIN products p on po.product_id = p.product_id GROUP BY o.order_id;
+	CREATE VIEW orders_details AS SELECT o.order_id, o.route_id, o.city2, SUM(tot_capacity(qty,capacity)) AS total_capacity,o.status  FROM orders o LEFT JOIN products_ordered po on o.order_id = po.order_id LEFT JOIN products p on po.product_id = p.product_id GROUP BY o.order_id;
+	CREATE VIEW trains_details AS SELECT ts.train_id FROM train_schedule ts LEFT JOIN ;
 
 
 
