@@ -7,7 +7,8 @@
  */
 require_once ("../inc/pdo.inc.php");
 $pdo = getConnection("root","");
-
+$datetime = new DateTime('tomorrow');
+$today = $datetime->format('l');
 $sql = "SELECT * FROM train_schedule ";
 
 $sql = "SELECT * FROM orders_details";
@@ -31,7 +32,7 @@ $rows = $stmt->fetchAll();
             <td>Order ID</td>
             <td>Route ID</td>
             <td>Total Capacity</td>
-            <td>Shipment ID</td>
+            <td>train ID</td>
         </tr>
 
         <?php
