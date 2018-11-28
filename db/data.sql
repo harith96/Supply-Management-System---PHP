@@ -50,25 +50,19 @@ INSERT INTO `stores` (`store_id`,`city`,`street`, `contact_no`) VALUES (5,'jaffn
 INSERT INTO `stores` (`store_id`,`city`,`street`, `contact_no`) VALUES (6,'trinco','sdfdsf', 0716352738);
 
 
-INSERT INTO `routes` (`route_id`,`store_id`, `max_time`) VALUES (1,1,'00:30:00');
-INSERT INTO `routes` (`route_id`,`store_id`, `max_time`) VALUES (2,2,'01:00:00');
-INSERT INTO `routes` (`route_id`,`store_id`, `max_time`) VALUES (3,3,'02:00:00');
-INSERT INTO `routes` (`route_id`,`store_id`, `max_time`) VALUES (4,4,'02:30:00');
-INSERT INTO `routes` (`route_id`,`store_id`, `max_time`) VALUES (5,5,'04:00:00');
-INSERT INTO `routes` (`route_id`,`store_id`, `max_time`) VALUES (6,6,'04:30:00');
+INSERT INTO `routes` (`route_id`,`store_id`, `max_time`, `route_path`) VALUES (1,1,'00:30:00','sdf, fdgfg, sfsfdsdf');
+INSERT INTO `routes` (`route_id`,`store_id`, `max_time`, `route_path`) VALUES (2,2,'01:00:00','dfgfdg, dsfdsfdsf, sdfsdfsd');
+INSERT INTO `routes` (`route_id`,`store_id`, `max_time`, `route_path`) VALUES (3,3,'02:00:00','dsfsd, awew, rter');
+INSERT INTO `routes` (`route_id`,`store_id`, `max_time`, `route_path`) VALUES (4,4,'01:00:00','sdh, asad, xcvcxv');
+INSERT INTO `routes` (`route_id`,`store_id`, `max_time`, `route_path`) VALUES (5,5,'01:00:00','sdsds, wefw, ghkj');
+INSERT INTO `routes` (`route_id`,`store_id`, `max_time`, `route_path`) VALUES (6,6,'01:00:00','gkfok, ghjkk, gkjhk');
 
-INSERT INTO `route_details`(`route_id`, `city`, `_index`) VALUES (1,'colombo',240);
-INSERT INTO `route_details`(`route_id`, `city`, `_index`) VALUES (2,'negombo',152);
-INSERT INTO `route_details`(`route_id`, `city`, `_index`) VALUES (3,'galle',162);
-INSERT INTO `route_details`(`route_id`, `city`, `_index`) VALUES (4,'matara',280);
-INSERT INTO `route_details`(`route_id`, `city`, `_index`) VALUES (5,'trinco',134);
-INSERT INTO `route_details`(`route_id`, `city`, `_index`) VALUES (6,'jaffna',154);
 
 INSERT INTO `products`(`name`, `_type`, `capacity`, `wholesale_price`, `retail_price`, `end_price`, `available_qty`) VALUES ('product1','a','100',150,160,160,100);
 INSERT INTO `products`(`name`, `_type`, `capacity`, `wholesale_price`, `retail_price`, `end_price`, `available_qty`) VALUES ('product2','b','150',250,270,270,200);
-INSERT INTO `products`(`name`, `_type`, `capacity`, `wholesale_price`, `retail_price`, `end_price`, `available_qty`) VALUES ('product3','c','155',300,330,330,150);
-INSERT INTO `products`(`name`, `_type`, `capacity`, `wholesale_price`, `retail_price`, `end_price`, `available_qty`) VALUES ('product4','d','170',350,390,390,50);
-INSERT INTO `products`(`name`, `_type`, `capacity`, `wholesale_price`, `retail_price`, `end_price`, `available_qty`) VALUES ('product5','d','250',400,440,440,20);
+INSERT INTO `products`(`name`, `_type`, `capacity`, `wholesale_price`, `retail_price`, `end_price`, `available_qty`) VALUES ('product3','c','155',250,270,270,200);
+INSERT INTO `products`(`name`, `_type`, `capacity`, `wholesale_price`, `retail_price`, `end_price`, `available_qty`) VALUES ('product4','d','170',250,270,270,200);
+INSERT INTO `products`(`name`, `_type`, `capacity`, `wholesale_price`, `retail_price`, `end_price`, `available_qty`) VALUES ('product5','d','250',250,270,270,200);
 
 INSERT INTO `sales_data`(`product_id`, `_date`, `city`, `route_id`, `item_sold`) VALUES (1,'2018-11-21','colombo',1,5);
 INSERT INTO `sales_data`(`product_id`, `_date`, `city`, `route_id`, `item_sold`) VALUES (2,'2018-11-22','colombo',1,10);
@@ -78,12 +72,12 @@ INSERT INTO `sales_data`(`product_id`, `_date`, `city`, `route_id`, `item_sold`)
 INSERT INTO `sales_data`(`product_id`, `_date`, `city`, `route_id`, `item_sold`) VALUES (2,'2018-11-27','negombo',2,3);
 INSERT INTO `sales_data`(`product_id`, `_date`, `city`, `route_id`, `item_sold`) VALUES (3,'2018-11-28','jaffna',6,10);
 
-INSERT INTO `orders`(`order_id`, `customer`, `street`, `route_id`, `delivery_date`, `_value`, `status`) VALUES (1,1,'sdfsfsdf',1,'2018-12-01',25,'sdfsdf');
-INSERT INTO `orders`(`order_id`, `customer`, `street`, `route_id`, `delivery_date`, `_value`, `status`) VALUES (2,3,'sdfsfdsfsdf',2,'2018-12-03',75,'sdfhsdf');
-INSERT INTO `orders`(`order_id`, `customer`, `street`, `route_id`, `delivery_date`, `_value`, `status`) VALUES (3,2,'sdfsffbsdf',1,'2018-12-04',55,'sdfsdfkj');
-INSERT INTO `orders`(`order_id`, `customer`, `street`, `route_id`, `delivery_date`, `_value`, `status`) VALUES (4,4,'sdfsfsdnhf',4,'2018-12-02',25,'sdfsioldf');
-INSERT INTO `orders`(`order_id`, `customer`, `street`, `route_id`, `delivery_date`, `_value`, `status`) VALUES (5,5,'sdfsfcsdf',6,'2018-12-03',34,'sdfsdfjkl');
-INSERT INTO `orders`(`order_id`, `customer`, `street`, `route_id`, `delivery_date`, `_value`, `status`) VALUES (6,2,'sdfshfsnbdf',5,'2018-12-04',45,'sdfsiodf');
+INSERT INTO `orders`(`order_id`, `customer`, `add_no`, `street`, `city1`, `city2`, `zip`, `route_id`, `delivery_date`, `_value`, `status`) VALUES (1,1,'152/1','sdfsfsdf','dsfsfd','colombo',23,1,'2018-12-01',25,'sdfsdf');
+INSERT INTO `orders`(`order_id`, `customer`, `add_no`, `street`, `city1`, `city2`, `zip`, `route_id`, `delivery_date`, `_value`, `status`) VALUES (2,3,'34/2','sdfsfdsfsdf','bjds','negombo',76,2,'2018-12-03',75,'sdfhsdf');
+INSERT INTO `orders`(`order_id`, `customer`, `add_no`, `street`, `city1`, `city2`, `zip`, `route_id`, `delivery_date`, `_value`, `status`) VALUES (3,2,'156/2','sdfsffbsdf','dsfsdf','galle',34,1,'2018-12-04',55,'sdfsdfkj');
+INSERT INTO `orders`(`order_id`, `customer`, `add_no`, `street`, `city1`, `city2`, `zip`, `route_id`, `delivery_date`, `_value`, `status`) VALUES (4,4,'55/1','sdfsfsdnhf','dsfsdsdf','matara',54,4,'2018-12-02',25,'sdfsioldf');
+INSERT INTO `orders`(`order_id`, `customer`, `add_no`, `street`, `city1`, `city2`, `zip`, `route_id`, `delivery_date`, `_value`, `status`) VALUES (5,5,'64/2','sdfsfcsdf','mcvbmn','jaffna',34,6,'2018-12-03',34,'sdfsdfjkl');
+INSERT INTO `orders`(`order_id`, `customer`, `add_no`, `street`, `city1`, `city2`, `zip`, `route_id`, `delivery_date`, `_value`, `status`) VALUES (6,2,'78/4','sdfshfsnbdf','hgjh','trinco',50,5,'2018-12-04',45,'sdfsiodf');
 
 INSERT INTO `products_ordered`(`order_id`, `product_id`, `qty`) VALUES (1,2,2);
 INSERT INTO `products_ordered`(`order_id`, `product_id`, `qty`) VALUES (2,1,5);
@@ -91,6 +85,28 @@ INSERT INTO `products_ordered`(`order_id`, `product_id`, `qty`) VALUES (3,2,3);
 INSERT INTO `products_ordered`(`order_id`, `product_id`, `qty`) VALUES (4,4,10);
 INSERT INTO `products_ordered`(`order_id`, `product_id`, `qty`) VALUES (5,3,28);
 INSERT INTO `products_ordered`(`order_id`, `product_id`, `qty`) VALUES (6,5,10);
+
+INSERT INTO `train_schedule`(`_day`, `_time`, `city`, `capacity`) VALUES ('2018-11-21','08:00:00','colombo',50);
+INSERT INTO `train_schedule`(`_day`, `_time`, `city`, `capacity`) VALUES ('2018-11-22','09:00:00','negombo',50);
+INSERT INTO `train_schedule`(`_day`, `_time`, `city`, `capacity`) VALUES ('2018-11-23','10:00:00','galle',50);
+INSERT INTO `train_schedule`(`_day`, `_time`, `city`, `capacity`) VALUES ('2018-11-24','07:00:00','matara',50);
+INSERT INTO `train_schedule`(`_day`, `_time`, `city`, `capacity`) VALUES ('2018-11-25','08:00:00','jaffna',50);
+INSERT INTO `train_schedule`(`_day`, `_time`, `city`, `capacity`) VALUES ('2018-11-26','10:00:00','trinco',50);
+
+INSERT INTO `train_trip`(`train_schedule_id`, `_date`, `status`) VALUES (1,'2018-11-21','fdgdfg');
+INSERT INTO `train_trip`(`train_schedule_id`, `_date`, `status`) VALUES (2,'2018-11-22','fdsf');
+INSERT INTO `train_trip`(`train_schedule_id`, `_date`, `status`) VALUES (3,'2018-11-23','fdhjgdfg');
+INSERT INTO `train_trip`(`train_schedule_id`, `_date`, `status`) VALUES (4,'2018-11-24','fdgdfddfdg');
+INSERT INTO `train_trip`(`train_schedule_id`, `_date`, `status`) VALUES (5,'2018-11-25','fdgdfbg');
+
+INSERT INTO `shipments`(`train_trip_id`, `store_id`, `delivery_date`, `status`, `capacity_left`) VALUES (1,1,'2018-11-21','fhgjtufgj',50);
+INSERT INTO `shipments`(`train_trip_id`, `store_id`, `delivery_date`, `status`, `capacity_left`) VALUES (2,2,'2018-11-23','fd',65);
+INSERT INTO `shipments`(`train_trip_id`, `store_id`, `delivery_date`, `status`, `capacity_left`) VALUES (3,3,'2018-11-23','ffdufgj',80);
+INSERT INTO `shipments`(`train_trip_id`, `store_id`, `delivery_date`, `status`, `capacity_left`) VALUES (5,4,'2018-11-25','uiuugj',70);
+INSERT INTO `shipments`(`train_trip_id`, `store_id`, `delivery_date`, `status`, `capacity_left`) VALUES (4,5,'2018-11-25','kl',50);
+
+
+
 
 
 

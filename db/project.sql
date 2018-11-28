@@ -53,15 +53,8 @@
 		route_id INT(10) PRIMARY KEY AUTO_INCREMENT,
 		store_id INT(10) NOT NULL,
 		max_time TIME NOT NULL,
+		route_path VARCHAR(255) NOT NULL,
 		FOREIGN KEY (store_id) REFERENCES stores(store_id) ON DELETE CASCADE ON UPDATE CASCADE
-	);
-
-	CREATE TABLE IF NOT EXISTS route_details(
-		route_id INT(10),
-		city VARCHAR(20),
-		_index INT(10) NOT NULL,
-		PRIMARY KEY (route_id,city),
-		FOREIGN KEY (route_id) REFERENCES routes(route_id) ON DELETE CASCADE ON UPDATE CASCADE
 	);
 
 	CREATE TABLE IF NOT EXISTS customers(
