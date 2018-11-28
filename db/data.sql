@@ -93,12 +93,6 @@ INSERT INTO `train_schedule`(`_day`, `_time`, `city`, `capacity`) VALUES ('2018-
 INSERT INTO `train_schedule`(`_day`, `_time`, `city`, `capacity`) VALUES ('2018-11-25','08:00:00','jaffna',50);
 INSERT INTO `train_schedule`(`_day`, `_time`, `city`, `capacity`) VALUES ('2018-11-26','10:00:00','trinco',50);
 
-INSERT INTO `train_trip`(`train_schedule_id`, `_date`, `status`) VALUES (1,'2018-11-21','fdgdfg');
-INSERT INTO `train_trip`(`train_schedule_id`, `_date`, `status`) VALUES (2,'2018-11-22','fdsf');
-INSERT INTO `train_trip`(`train_schedule_id`, `_date`, `status`) VALUES (3,'2018-11-23','fdhjgdfg');
-INSERT INTO `train_trip`(`train_schedule_id`, `_date`, `status`) VALUES (4,'2018-11-24','fdgdfddfdg');
-INSERT INTO `train_trip`(`train_schedule_id`, `_date`, `status`) VALUES (5,'2018-11-25','fdgdfbg');
-
 INSERT INTO `shipments`(`train_trip_id`, `store_id`, `delivery_date`, `status`, `capacity_left`) VALUES (1,1,'2018-11-21','fhgjtufgj',50);
 INSERT INTO `shipments`(`train_trip_id`, `store_id`, `delivery_date`, `status`, `capacity_left`) VALUES (2,2,'2018-11-23','fd',65);
 INSERT INTO `shipments`(`train_trip_id`, `store_id`, `delivery_date`, `status`, `capacity_left`) VALUES (3,3,'2018-11-23','ffdufgj',80);
