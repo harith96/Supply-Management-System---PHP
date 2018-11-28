@@ -72,12 +72,12 @@ INSERT INTO `sales_data`(`product_id`, `_date`, `city`, `route_id`, `item_sold`)
 INSERT INTO `sales_data`(`product_id`, `_date`, `city`, `route_id`, `item_sold`) VALUES (2,'2018-11-27','negombo',2,3);
 INSERT INTO `sales_data`(`product_id`, `_date`, `city`, `route_id`, `item_sold`) VALUES (3,'2018-11-28','jaffna',6,10);
 
-INSERT INTO `orders`(`order_id`, `customer`, `add_no`, `street`, `city1`, `city2`, `zip`, `route_id`, `delivery_date`, `_value`, `status`) VALUES (1,1,'152/1','sdfsfsdf','dsfsfd','colombo',23,1,'2018-11-27',25,'delivered');
-INSERT INTO `orders`(`order_id`, `customer`, `add_no`, `street`, `city1`, `city2`, `zip`, `route_id`, `delivery_date`, `_value`, `status`) VALUES (2,3,'34/2','sdfsfdsfsdf','bjds','negombo',76,2,'2018-12-03',75,'shipped');
-INSERT INTO `orders`(`order_id`, `customer`, `add_no`, `street`, `city1`, `city2`, `zip`, `route_id`, `delivery_date`, `_value`, `status`) VALUES (3,2,'156/2','sdfsffbsdf','dsfsdf','galle',34,1,'2018-12-04',55,'processing');
-INSERT INTO `orders`(`order_id`, `customer`, `add_no`, `street`, `city1`, `city2`, `zip`, `route_id`, `delivery_date`, `_value`, `status`) VALUES (4,4,'55/1','sdfsfsdnhf','dsfsdsdf','matara',54,4,'2018-11-28',25,'delivered');
-INSERT INTO `orders`(`order_id`, `customer`, `add_no`, `street`, `city1`, `city2`, `zip`, `route_id`, `delivery_date`, `_value`, `status`) VALUES (5,5,'64/2','sdfsfcsdf','mcvbmn','jaffna',34,6,'2018-12-03',34,'shipped');
-INSERT INTO `orders`(`order_id`, `customer`, `add_no`, `street`, `city1`, `city2`, `zip`, `route_id`, `delivery_date`, `_value`, `status`) VALUES (6,2,'78/4','sdfshfsnbdf','hgjh','trinco',50,5,'2018-12-04',45,'processing');
+INSERT INTO `orders`(`customer`, `add_no`, `street`, `city1`, `city2`, `zip`, `route_id`, `delivery_date`, `_value`, `status`) VALUES (1,'152/1','sdfsfsdf','dsfsfd','colombo',23,1,'2018-11-27',25,'delivered');
+INSERT INTO `orders`(`customer`, `add_no`, `street`, `city1`, `city2`, `zip`, `route_id`, `delivery_date`, `_value`, `status`) VALUES (3,'34/2','sdfsfdsfsdf','bjds','negombo',76,2,'2018-12-03',75,'shipped');
+INSERT INTO `orders`(`customer`, `add_no`, `street`, `city1`, `city2`, `zip`, `route_id`, `delivery_date`, `_value`, `status`) VALUES (2,'156/2','sdfsffbsdf','dsfsdf','galle',34,1,'2018-12-04',55,'processing');
+INSERT INTO `orders`(`customer`, `add_no`, `street`, `city1`, `city2`, `zip`, `route_id`, `delivery_date`, `_value`, `status`) VALUES (4,'55/1','sdfsfsdnhf','dsfsdsdf','matara',54,4,'2018-11-28',25,'delivered');
+INSERT INTO `orders`(`customer`, `add_no`, `street`, `city1`, `city2`, `zip`, `route_id`, `delivery_date`, `_value`, `status`) VALUES (5,'64/2','sdfsfcsdf','mcvbmn','jaffna',34,6,'2018-12-03',34,'shipped');
+INSERT INTO `orders`(`customer`, `add_no`, `street`, `city1`, `city2`, `zip`, `route_id`, `delivery_date`, `_value`, `status`) VALUES (2,'78/4','sdfshfsnbdf','hgjh','trinco',50,5,'2018-12-04',45,'processing');
 
 INSERT INTO `products_ordered`(`order_id`, `product_id`, `qty`) VALUES (1,2,2);
 INSERT INTO `products_ordered`(`order_id`, `product_id`, `qty`) VALUES (2,1,5);
@@ -86,12 +86,13 @@ INSERT INTO `products_ordered`(`order_id`, `product_id`, `qty`) VALUES (4,4,10);
 INSERT INTO `products_ordered`(`order_id`, `product_id`, `qty`) VALUES (5,3,28);
 INSERT INTO `products_ordered`(`order_id`, `product_id`, `qty`) VALUES (6,5,10);
 
-INSERT INTO `train_schedule`(`_day`, `_time`, `capacity`) VALUES ('2018-11-21','08:00:00',50);
-INSERT INTO `train_schedule`(`_day`, `_time`, `capacity`) VALUES ('2018-11-22','09:00:00',50);
-INSERT INTO `train_schedule`(`_day`, `_time`, `capacity`) VALUES ('2018-11-23','10:00:00',50);
-INSERT INTO `train_schedule`(`_day`, `_time`, `capacity`) VALUES ('2018-11-24','07:00:00',50);
-INSERT INTO `train_schedule`(`_day`, `_time`, `capacity`) VALUES ('2018-11-25','08:00:00',50);
-INSERT INTO `train_schedule`(`_day`, `_time`, `capacity`) VALUES ('2018-11-26','10:00:00',50);
+INSERT INTO `train_schedule`(`_day`, `_time`, `capacity`) VALUES (1,'08:00:00',50);
+INSERT INTO `train_schedule`(`_day`, `_time`, `capacity`) VALUES (2,'09:00:00',50);
+INSERT INTO `train_schedule`(`_day`, `_time`, `capacity`) VALUES (3,'10:00:00',50);
+INSERT INTO `train_schedule`(`_day`, `_time`, `capacity`) VALUES (4,'07:00:00',50);
+INSERT INTO `train_schedule`(`_day`, `_time`, `capacity`) VALUES (5,'08:00:00',50);
+INSERT INTO `train_schedule`(`_day`, `_time`, `capacity`) VALUES (6,'10:00:00',50);
+INSERT INTO `train_schedule`(`_day`, `_time`, `capacity`) VALUES (7,'11:00:00',50);
 
 INSERT INTO `train_cities`(`train_id`, `city`) VALUES (1,'colombo');
 INSERT INTO `train_cities`(`train_id`, `city`) VALUES (1,'negombo');
