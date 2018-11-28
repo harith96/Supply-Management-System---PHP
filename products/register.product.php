@@ -5,7 +5,8 @@
  * Date: 11/27/2018
  * Time: 7:36 PM
  */
-require_once ("Inc/connection.inc.php");
+require_once ("../inc/pdo.inc.php");
+$pdo = getConnection("root","");
 
 
 session_start();
