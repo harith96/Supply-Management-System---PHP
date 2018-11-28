@@ -6,7 +6,7 @@
 	$order_id = '';
 	$id=0;
 	
-	$customer=$_SESSION['uid']);
+	$customer=$_SESSION['uid'];
 	
 	//$customer = '1';
 	$add_no = '';
