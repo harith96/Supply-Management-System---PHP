@@ -99,6 +99,48 @@ INSERT INTO `shipments`(`train_id`, `store_id`, `_date`, `status`, `capacity_lef
 INSERT INTO `shipments`(`train_id`, `store_id`, `_date`, `status`, `capacity_left`) VALUES (5,4,'2018-12-25','uiuugj',70);
 INSERT INTO `shipments`(`train_id`, `store_id`, `_date`, `status`, `capacity_left`) VALUES (4,5,'2018-12-25','kl',50);
 
+INSERT INTO `shipment_orders`(`shipment_id`, `order_id`) VALUES (1,1);
+INSERT INTO `shipment_orders`(`shipment_id`, `order_id`) VALUES (2,3);
+INSERT INTO `shipment_orders`(`shipment_id`, `order_id`) VALUES (2,4);
+INSERT INTO `shipment_orders`(`shipment_id`, `order_id`) VALUES (4,5);
+INSERT INTO `shipment_orders`(`shipment_id`, `order_id`) VALUES (5,2);
+INSERT INTO `shipment_orders`(`shipment_id`, `order_id`) VALUES (3,6);
+
+INSERT INTO `trucks`(`store_id`, `status`) VALUES (1,"available");
+INSERT INTO `trucks`(`store_id`, `status`) VALUES (1,"not available");
+INSERT INTO `trucks`(`store_id`, `status`) VALUES (2,"not available");
+INSERT INTO `trucks`(`store_id`, `status`) VALUES (2,"available");
+INSERT INTO `trucks`(`store_id`, `status`) VALUES (3,"available");
+INSERT INTO `trucks`(`store_id`, `status`) VALUES (4,"available");
+INSERT INTO `trucks`(`store_id`, `status`) VALUES (5,"available");
+INSERT INTO `trucks`(`store_id`, `status`) VALUES (6,"available");
+
+INSERT INTO `truck_work_data`(`truck_id`,`_date`, `work_hours`) VALUES (1,'2018-11-21','30:00:00');
+INSERT INTO `truck_work_data`(`truck_id`,`_date`, `work_hours`) VALUES (2,'2018-11-22','35:00:00');
+INSERT INTO `truck_work_data`(`truck_id`,`_date`, `work_hours`) VALUES (2,'2018-11-23','40:00:00');
+INSERT INTO `truck_work_data`(`truck_id`,`_date`, `work_hours`) VALUES (3,'2018-11-23','40:00:00');
+INSERT INTO `truck_work_data`(`truck_id`,`_date`, `work_hours`) VALUES (4,'2018-11-24','20:00:00');
+INSERT INTO `truck_work_data`(`truck_id`,`_date`, `work_hours`) VALUES (5,'2018-11-24','25:00:00');
+INSERT INTO `truck_work_data`(`truck_id`,`_date`, `work_hours`) VALUES (6,'2018-11-25','32:00:00');
+INSERT INTO `truck_work_data`(`truck_id`,`_date`, `work_hours`) VALUES (7,'2018-11-26','38:00:00');
+INSERT INTO `truck_work_data`(`truck_id`,`_date`, `work_hours`) VALUES (8,'2018-11-26','30:00:00');
+
+INSERT INTO `truck_trip`(`truck_id`, `_date`, `_time`, `status`, `driver_id`, `assistant_id`, `route_id`) VALUES (1,'2018-11-21','12:00:00','pending',6,10,1);
+INSERT INTO `truck_trip`(`truck_id`, `_date`, `_time`, `status`, `driver_id`, `assistant_id`, `route_id`) VALUES (2,'2018-11-23','12:00:00','pending',8,9,2);
+INSERT INTO `truck_trip`(`truck_id`, `_date`, `_time`, `status`, `driver_id`, `assistant_id`, `route_id`) VALUES (3,'2018-11-24','12:00:00','pending',7,8,3);
+INSERT INTO `truck_trip`(`truck_id`, `_date`, `_time`, `status`, `driver_id`, `assistant_id`, `route_id`) VALUES (4,'2018-11-26','12:00:00','pending',8,6,4);
+INSERT INTO `truck_trip`(`truck_id`, `_date`, `_time`, `status`, `driver_id`, `assistant_id`, `route_id`) VALUES (5,'2018-11-28','12:00:00','pending',10,9,6);
+
+INSERT INTO `truck_trip_orders`(`truck_schedule_id`, `order_id`) VALUES (1,1);
+INSERT INTO `truck_trip_orders`(`truck_schedule_id`, `order_id`) VALUES (1,2);
+INSERT INTO `truck_trip_orders`(`truck_schedule_id`, `order_id`) VALUES (2,3);
+INSERT INTO `truck_trip_orders`(`truck_schedule_id`, `order_id`) VALUES (3,4);
+INSERT INTO `truck_trip_orders`(`truck_schedule_id`, `order_id`) VALUES (4,5);
+INSERT INTO `truck_trip_orders`(`truck_schedule_id`, `order_id`) VALUES (5,6);
+
+
+
+
 
 
 
