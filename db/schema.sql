@@ -113,7 +113,7 @@
 
 	CREATE TABLE IF NOT EXISTS train_schedule(
 		train_id INT(10) PRIMARY KEY AUTO_INCREMENT,
-		_day DATE NOT NULL,
+		_day INT(1) NOT NULL,
 		_time TIME NOT NULL,
 		capacity FLOAT(12,2) NOT NULL
 	);
