@@ -7,7 +7,7 @@
  */
 
 function getConnection($user,$pass){
-    $servername = "5ab0aac0.ngrok.io";
+    $servername = "localhost";
     $username = $user;
     $password = $pass;
 

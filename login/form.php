@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Kinder Smart</title>
+    <title>ABC Company</title>
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="../style/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
@@ -11,7 +11,7 @@
 </head>
 <body>
 <div class="container form">
-    <div class="name center"><h1><span class="amber-text text-darken-4">Kinder</span>Smart</h1></div>
+    <div class="name center"><h1><span class="amber-text text-darken-4">ABC </span>Company</h1></div>
     <?php
     if(isset($_SESSION['login'])){
         $check = $_SESSION['login'];
