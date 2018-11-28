@@ -1,3 +1,6 @@
+<?php
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,12 +9,12 @@
 </head>
 <body>
     <h1>Register Administrator</h1>
-    <form target="register-admin.php" method="post">
-        <label for="fname">First Name  : </label>
-        <input type="text" name="fname" id="fname"><br>
+    <form action="register.admin.php" method="post">
+        <label for="first_name">First Name  : </label>
+        <input type="text" name="first_name" id="first_name"><br>
 
-        <label for="lname">Last Name  : </label>
-        <input type="text" name="lname" id="lname"><br>
+        <label for="last_name">Last Name  : </label>
+        <input type="text" name="last_name" id="last_name"><br>
 
         <label for="email">Email  : </label>
         <input type="email" name="email" id="email"><br>
@@ -40,7 +43,7 @@
         <label for="re_password">Re - Password  : </label>
         <input type="password" name="re_password" id="re_password"><br>
 
-        <BUTTON type="submit">Submit</BUTTON>
+        <INPUT type="submit" name="submit">
     </form>
 </body>
 </html>
