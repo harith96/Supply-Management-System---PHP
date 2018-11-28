@@ -16,6 +16,14 @@ $stmt->execute();
 $trains = $stmt->fetchAll();
 $sql =null;
 $stmt=null;
+
+$sql = "SELECT * FROM train_cities";
+$stmt = $pdo->prepare($sql);
+$stmt->execute();
+$train_cities = $stmt->fetchAll();
+$sql =null;
+$stmt=null;
+
 $sql = "SELECT * FROM orders_details WHERE status ='processing'";
 $stmt = $pdo->prepare($sql);
 $stmt->execute();
@@ -50,8 +58,14 @@ $rows = $stmt->fetchAll();
             echo "<td>";
                 echo  "<select name='".$row["order_id"]."'>";
                     foreach($trains as $train){
-
-                        echo "<option value='".$train['train_id']."'>".$train['train_id']."</option>";
+                        $availability = false;
+                        foreach ($train_cities as $tc){
+                            if($tc['train_id'] == $train['train_id'] and $tc['city']==$row['city2']){
+                                $availability = true;
+                            }
+                        }
+                        if($availability){
+                        echo "<option value='".$train['train_id']."'>".$train['train_id']."</option>";}
                     }
                 echo "</select>";
             echo "<td>";
