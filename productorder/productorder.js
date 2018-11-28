@@ -163,7 +163,7 @@ function addRow(product,qty){
 }
 
 function updateRow(product,qty){
-	qtys[products.indexOf(product)].value = qtys[products.indexOf(product)]+qty ;
+	qtys[products.indexOf(product)] = parseInt(qtys[products.indexOf(product)])+parseInt(qty) ;
 
 	
 	var x = document.getElementById("table").rows[products.indexOf(product)+1].cells;
