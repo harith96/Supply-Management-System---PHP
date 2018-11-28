@@ -8,6 +8,8 @@
 require_once ("../inc/pdo.inc.php");
 $pdo = getConnection("root","");
 
+$sql = "SELECT * FROM train_schedule ";
+
 $sql = "SELECT * FROM orders_details";
 $stmt = $pdo->prepare($sql);
 $stmt->execute();
@@ -38,7 +40,9 @@ $rows = $stmt->fetchAll();
             echo "<td>".$row["order_id"]."</td>";
             echo "<td>".$row["route_id"]."</td>";
             echo "<td>".$row["total_capacity"]."</td>";
-            echo "<td></td>";
+            echo "<td>";
+
+            echo "<td>";
             echo "</tr>";
         }
         ?>

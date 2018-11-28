@@ -115,8 +115,14 @@
 		train_id INT(10) PRIMARY KEY AUTO_INCREMENT,
 		_day DATE NOT NULL,
 		_time TIME NOT NULL,
-		city VARCHAR(20) NOT NULL,
 		capacity FLOAT(12,2) NOT NULL
+	);
+
+	CREATE TABLE IF NOT EXISTS train_cities(
+	  train_id INT(10),
+	  city VARCHAR(20),
+	  PRIMARY KEY (train_id,city),
+	  FOREIGN KEY (train_id) REFERENCES train_schedule
 	);
 
 	CREATE TABLE IF NOT EXISTS shipments(
