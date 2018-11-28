@@ -104,6 +104,21 @@ INSERT INTO `train_cities`(`train_id`, `city`) VALUES (4,'galle');
 INSERT INTO `train_cities`(`train_id`, `city`) VALUES (5,'trinco');
 INSERT INTO `train_cities`(`train_id`, `city`) VALUES (6,'colombo');
 INSERT INTO `train_cities`(`train_id`, `city`) VALUES (6,'matara');
+INSERT INTO `train_cities`(`train_id`, `city`) VALUES (1,'trinco');
+INSERT INTO `train_cities`(`train_id`, `city`) VALUES (1,'galle');
+INSERT INTO `train_cities`(`train_id`, `city`) VALUES (2,'trinco');
+INSERT INTO `train_cities`(`train_id`, `city`) VALUES (2,'colombo');
+INSERT INTO `train_cities`(`train_id`, `city`) VALUES (2,'jaffna');
+INSERT INTO `train_cities`(`train_id`, `city`) VALUES (3,'matara');
+INSERT INTO `train_cities`(`train_id`, `city`) VALUES (3,'colombo');
+INSERT INTO `train_cities`(`train_id`, `city`) VALUES (4,'jaffna');
+INSERT INTO `train_cities`(`train_id`, `city`) VALUES (4,'trinco');
+INSERT INTO `train_cities`(`train_id`, `city`) VALUES (3,'negombo');
+INSERT INTO `train_cities`(`train_id`, `city`) VALUES (5,'colombo');
+INSERT INTO `train_cities`(`train_id`, `city`) VALUES (5,'jaffna');
+INSERT INTO `train_cities`(`train_id`, `city`) VALUES (5,'negombo');
+INSERT INTO `train_cities`(`train_id`, `city`) VALUES (6,'negombo');
+
 
 
 INSERT INTO `shipments`(`train_id`, `store_id`, `_date`, `status`, `capacity_left`) VALUES (1,1,'2018-12-21','delivered',50);
