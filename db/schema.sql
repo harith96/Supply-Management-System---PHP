@@ -147,7 +147,7 @@
 	CREATE TABLE IF NOT EXISTS trucks(
 		truck_id INT(10) AUTO_INCREMENT,
 		store_id INT(10) NOT NULL,
-		status VARCHAR(10) NOT NULL,
+		status VARCHAR(20) NOT NULL,
 		PRIMARY KEY (truck_id),
 		FOREIGN KEY (store_id) REFERENCES stores(store_id)
 	);
@@ -270,7 +270,7 @@
 	DELIMITER ;
 
 	-- VIEWS --
-	CREATE VIEW orders_details AS SELECT o.order_id, o.route_id, SUM(tot_capacity(qty,capacity)) AS total_capacity  FROM orders o LEFT JOIN products_ordered po on o.order_id = po.order_id LEFT JOIN products p on po.product_id = p.product_id GROUP BY o.order_id;
+	CREATE VIEW orders_details AS SELECT o.order_id, o.route_id, SUM(tot_capacity(qty,capacity)) AS total_capacity,o.status  FROM orders o LEFT JOIN products_ordered po on o.order_id = po.order_id LEFT JOIN products p on po.product_id = p.product_id GROUP BY o.order_id;
 
 
 
