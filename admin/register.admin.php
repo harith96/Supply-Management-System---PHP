@@ -5,9 +5,9 @@
  * Date: 11/27/2018
  * Time: 7:36 PM
  */
-require_once ("Inc/connection.inc.php");
-
+require_once ("../inc/pdo.inc.php");
 session_start();
+$pdo = getConnection("root","");
 
 if (isset($_POST['submit'])) {
     $first_name = $_POST['first_name'];
