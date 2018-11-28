@@ -38,7 +38,10 @@
         <input type="text" name="zip" id="zip"><br>
 
         <label for="_type">Type  : </label>
-        <input type="text" name="_type" id="_type"><br>
+        <select name="_type" id="_type">
+			<option value="driver">Driver</option>
+			<option value="assistant">Assistant</option>
+		</select><br>
 
         <label for="salary">Salary  : </label>
         <input type="salary" name="salary" id="salary"><br>

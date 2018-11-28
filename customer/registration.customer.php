@@ -38,7 +38,11 @@
         <input type="text" name="zip" id="zip"><br>
 
         <label for="_type">Type  : </label>
-        <input type="text" name="_type" id="_type"><br>
+        <select name="_type" id="_type">
+			<option value="retail">Retailer</option>
+			<option value="wholesale">Wholesale</option>
+			<option value="customer">Customer</option>
+		</select><br>
 
         <label for="password">Password  : </label>
         <input type="password" name="password" id="password"><br>
