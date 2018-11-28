@@ -57,6 +57,8 @@ if (isset($_POST['submit'])) {
             if($stmt){
                 echo "Successful";
             }
+            $stmt = null;
+            $pdo = null;
         }
         catch(PDOException $e){
             echo $stmt->errorInfo()[2];

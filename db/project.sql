@@ -75,7 +75,7 @@
 		product_id INT(10) PRIMARY KEY AUTO_INCREMENT,
 		name VARCHAR(20) NOT NULL,
 		_type VARCHAR(20) NOT NULL,
-		capacity VARCHAR(10) NOT NULL,
+		capacity INT(10) NOT NULL,
 		wholesale_price FLOAT(12,2) NOT NULL,
 		retail_price FLOAT(12,2) NOT NULL,
 		end_price FLOAT(12,2) NOT NULL,
@@ -119,29 +119,21 @@
 	);
 
 	CREATE TABLE IF NOT EXISTS train_schedule(
-		train_schedule_id INT(10) PRIMARY KEY AUTO_INCREMENT,
+		train_id INT(10) PRIMARY KEY AUTO_INCREMENT,
 		_day DATE NOT NULL,
 		_time TIME NOT NULL,
 		city VARCHAR(20) NOT NULL,
 		capacity FLOAT(12,2) NOT NULL
 	);
 
-	CREATE TABLE IF NOT EXISTS train_trip(
-		train_trip_id INT(10) PRIMARY KEY AUTO_INCREMENT,
-		train_schedule_id INT(10) NOT NULL,
-		_date DATE NOT NULL,
-		status VARCHAR(10) NOT NULL,
-		FOREIGN KEY (train_schedule_id) REFERENCES train_schedule(train_schedule_id)
-	);
-
 	CREATE TABLE IF NOT EXISTS shipments(
 		shipment_id INT(10) PRIMARY KEY AUTO_INCREMENT,
-		train_trip_id INT(10) NOT NULL,
+		train_id INT(10) NOT NULL,
 		store_id INT(10) NOT NULL,
-		delivery_date DATE NOT NULL,
+		_date DATE NOT NULL,
 		status VARCHAR(10) NOT NULL,
 		capacity_left FLOAT(12,2) NOT NULL,
-		FOREIGN KEY (train_trip_id) REFERENCES train_trip(train_trip_id),
+		FOREIGN KEY (train_id) REFERENCES train_schedule(train_id),
 		FOREIGN KEY (store_id) REFERENCES stores(store_id)
 	);
 
@@ -269,5 +261,16 @@
 	//
 	delimiter ;
 	
-	GRANT USAGE ON * TO customer IDENTIFIED BY customer123;
+	-- FUNCTIONS --
+	DELIMITER //
+	CREATE FUNCTION tot_capacity (qty INT, capacity INT) RETURNS INT
+	  BEGIN
+	    RETURN qty*capacity;
+	  END//
+	DELIMITER ;
+
+	-- VIEWS --
+	CREATE VIEW orders_details AS SELECT o.order_id, o.route_id, SUM(tot_capacity(qty,capacity)) AS total_capacity  FROM orders o LEFT JOIN products_ordered po on o.order_id = po.order_id LEFT JOIN products p on po.product_id = p.product_id GROUP BY o.order_id;
+
+
 
