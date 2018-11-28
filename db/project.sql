@@ -87,7 +87,7 @@
 	);
 
 	CREATE TABLE IF NOT EXISTS orders(
-		order_id INT(10) PRIMARY KEY,
+		order_id INT(10) PRIMARY KEY AUTO_INCREMENT,
 		customer INT(10) NOT NULL,
 		add_no VARCHAR(15) NOT NULL,
 		street VARCHAR(20),
@@ -113,7 +113,7 @@
 
 	CREATE TABLE IF NOT EXISTS train_schedule(
 		train_id INT(10) PRIMARY KEY AUTO_INCREMENT,
-		_day ENUM("monday","tuesday","wednesday","thursday","friday","saturday","sunday") NOT NULL,
+		_day DATE NOT NULL,
 		_time TIME NOT NULL,
 		capacity FLOAT(12,2) NOT NULL
 	);
