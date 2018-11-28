@@ -97,7 +97,7 @@
 		route_id INT(10) NOT NULL,
 		delivery_date DATE NOT NULL,
 		_value FLOAT(12,2) NOT NULL,
-		status VARCHAR(5) NOT NULL,
+		status ENUM("processing","shipped","delivered") NOT NULL,
 		FOREIGN KEY (customer) REFERENCES customers(customer_id),
 		FOREIGN KEY (route_id) REFERENCES routes(route_id)
 	);
@@ -130,7 +130,7 @@
 		train_id INT(10) NOT NULL,
 		store_id INT(10) NOT NULL,
 		_date DATE NOT NULL,
-		status VARCHAR(10) NOT NULL,
+		status ENUM("processing","delivered") NOT NULL,
 		capacity_left FLOAT(12,2) NOT NULL,
 		FOREIGN KEY (train_id) REFERENCES train_schedule(train_id),
 		FOREIGN KEY (store_id) REFERENCES stores(store_id)
