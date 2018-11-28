@@ -39,8 +39,12 @@ $("#sub-class").click(function(){
 	
 	var product = $('#select-product').val();
 	var qty = $('#qty').val();
-
-    addRow(product, qty);
+	
+	if(products.indexOf(product) == -1){
+		addRow(product, qty);
+	}else{
+		updateRow(product, qty);
+	}
 
 
 });
@@ -155,6 +159,18 @@ function addRow(product,qty){
     	}
 	});
 	
+	
+}
+
+function updateRow(product,qty){
+	qtys[products.indexOf(product)].value = qtys[products.indexOf(product)]+qty ;
+
+	
+	var x = document.getElementById("table").rows[products.indexOf(product)+1].cells;
+	$newqn =parseInt(x[3].innerHTML) + parseInt(qty) ;
+    x[3].innerHTML = $newqn;
+	$newval = parseFloat(x[3].innerHTML) *  parseFloat(x[2].innerHTML) ;
+	x[4].innerHTML = $newval;
 	
 }
 
