@@ -87,7 +87,7 @@
 	);
 
 	CREATE TABLE IF NOT EXISTS orders(
-		order_id INT(10) PRIMARY KEY AUTO_INCREMENT,
+		order_id INT(10) PRIMARY KEY ,
 		customer INT(10) NOT NULL,
 		add_no VARCHAR(15) NOT NULL,
 		street VARCHAR(20),
