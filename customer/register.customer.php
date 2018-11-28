@@ -15,7 +15,7 @@ if (isset($_POST['submit'])) {
     $city2 = $_POST['city2'];
     $zip = $_POST['zip'];
     $password = $_POST['password'];
-    $type = "admin";
+    $type = "customer";
 
     if (empty($first_name) or empty($last_name) or empty($nic) or empty($email) or empty($add_no) or empty($street) or empty($city1) or empty($zip) or empty($password)) {
         $_SESSION['admin_reg'] = 'empty';
