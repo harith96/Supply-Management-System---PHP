@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e48ba596-6847-44ac-9d4e-9e60c1006fe8" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/admin/test.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/ship.orders.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/ship.orders.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/project.sql" beforeDir="false" afterPath="$PROJECT_DIR$/db/project.sql" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -105,8 +102,8 @@
       <file leaf-file-name="project.sql" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/db/project.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="115" column="14" selection-start-line="115" selection-start-column="14" selection-end-line="115" selection-end-column="14" />
+            <state relative-caret-position="200">
+              <caret line="122" column="4" lean-forward="true" selection-start-line="122" selection-start-column="4" selection-end-line="122" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -278,12 +275,12 @@
       <updated>1543327385684</updated>
       <workItem from="1543327387501" duration="8578000" />
       <workItem from="1543387805356" duration="6147000" />
-      <workItem from="1543394153595" duration="23701000" />
+      <workItem from="1543394153595" duration="23762000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38426000" />
+    <option name="totallyTimeSpent" value="38487000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -605,8 +602,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/db/project.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="115" column="14" selection-start-line="115" selection-start-column="14" selection-end-line="115" selection-end-column="14" />
+        <state relative-caret-position="200">
+          <caret line="122" column="4" lean-forward="true" selection-start-line="122" selection-start-column="4" selection-end-line="122" selection-end-column="4" />
         </state>
       </provider>
     </entry>
