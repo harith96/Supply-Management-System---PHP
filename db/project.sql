@@ -122,7 +122,7 @@
 	  train_id INT(10),
 	  city VARCHAR(20),
 	  PRIMARY KEY (train_id,city),
-	  FOREIGN KEY (train_id) REFERENCES train_schedule
+	  FOREIGN KEY (train_id) REFERENCES train_schedule(train_id)
 	);
 
 	CREATE TABLE IF NOT EXISTS shipments(
@@ -169,6 +169,7 @@
 		driver_id INT(10) NOT NULL,
 		assistant_id INT(10) NOT NULL,
 		route_id INT(10) NOT NULL,
+		FOREIGN KEY (truck_id) REFERENCES trucks(truck_id),
 		FOREIGN KEY (driver_id) REFERENCES employees(employee_id),
 		FOREIGN KEY (assistant_id) REFERENCES employees(employee_id),
 		FOREIGN KEY (route_id) REFERENCES routes(route_id)
