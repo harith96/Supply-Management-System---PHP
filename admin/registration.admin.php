@@ -43,7 +43,7 @@
         <label for="re_password">Re - Password  : </label>
         <input type="password" name="re_password" id="re_password"><br>
 
-        <INPUT type="submit" name="submit">
+        <input type="submit" name="submit">
     </form>
 </body>
 </html>

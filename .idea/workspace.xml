@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e48ba596-6847-44ac-9d4e-9e60c1006fe8" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/admin/shipOrders.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/shipOrders.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/products/register.product.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/products/register.product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/registration.admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/registration.admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/update.train.schedule.front.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/update.train.schedule.front.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/update.train.schedule.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/update.train.schedule.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/project.sql" beforeDir="false" afterPath="$PROJECT_DIR$/db/project.sql" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,50 +35,14 @@
       <file leaf-file-name="register.admin.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/register.admin.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="59" column="12" lean-forward="true" selection-start-line="59" selection-start-column="12" selection-end-line="60" selection-end-column="24" />
+            <state relative-caret-position="177">
+              <caret line="41" column="46" lean-forward="true" selection-start-line="41" selection-start-column="46" selection-end-line="41" selection-end-column="46" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="form.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/login/form.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-380">
-              <caret line="14" column="9" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="validate.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/login/validate.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="58" column="8" selection-start-line="58" selection-start-column="8" selection-end-line="58" selection-end-column="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="connection.inc.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/inc/connection.inc.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="20">
-              <caret line="1" column="55" selection-start-line="1" selection-start-column="55" selection-end-line="1" selection-end-column="55" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pdo.inc.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/inc/pdo.inc.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="19" column="44" selection-start-line="19" selection-start-column="44" selection-end-line="19" selection-end-column="44" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="shipOrders.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/shipOrders.php">
+      <file leaf-file-name="ship.orders.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/ship.orders.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="154">
               <caret line="10" column="37" selection-start-line="10" selection-start-column="37" selection-end-line="10" selection-end-column="37" />
@@ -82,11 +50,47 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tables.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/style/tables.css">
+      <file leaf-file-name="update.train.schedule.front.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/update.train.schedule.front.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="20">
-              <caret line="1" column="30" selection-start-line="1" selection-start-column="30" selection-end-line="1" selection-end-column="30" />
+            <state relative-caret-position="820">
+              <caret line="53" column="11" lean-forward="true" selection-start-line="53" selection-start-column="11" selection-end-line="53" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="validate.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/login/validate.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="620">
+              <caret line="58" column="8" selection-start-line="58" selection-start-column="8" selection-end-line="58" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="update.train.schedule.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/update.train.schedule.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="200">
+              <caret line="10" selection-start-line="10" selection-end-line="12" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="register.product.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/products/register.product.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="280">
+              <caret line="32" column="29" selection-start-line="32" selection-start-column="29" selection-end-line="32" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="registration.admin.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/registration.admin.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="774">
+              <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
             </state>
           </provider>
         </entry>
@@ -103,8 +107,8 @@
       <file leaf-file-name="project.sql" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/db/project.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="125" column="4" selection-start-line="125" selection-start-column="4" selection-end-line="125" selection-end-column="4" />
+            <state relative-caret-position="140">
+              <caret line="115" column="83" selection-start-line="115" selection-start-column="83" selection-end-line="115" selection-end-column="83" />
             </state>
           </provider>
         </entry>
@@ -156,7 +160,6 @@
         <option value="$PROJECT_DIR$/admin/admin-reg.php" />
         <option value="$PROJECT_DIR$/admin/register-admin.php" />
         <option value="$PROJECT_DIR$/customer/Inc/connection.inc.php" />
-        <option value="$PROJECT_DIR$/admin/registration.admin.php" />
         <option value="$PROJECT_DIR$/admin/Inc/connection.inc.php" />
         <option value="$PROJECT_DIR$/login/index.php" />
         <option value="$PROJECT_DIR$/inc/pdo.php" />
@@ -171,6 +174,10 @@
         <option value="$PROJECT_DIR$/db/project - Copy.sql" />
         <option value="$PROJECT_DIR$/db/data.sql" />
         <option value="$PROJECT_DIR$/admin/shipOrders.php" />
+        <option value="$PROJECT_DIR$/admin/products/register.product.php" />
+        <option value="$PROJECT_DIR$/admin/update.train.schedule.php" />
+        <option value="$PROJECT_DIR$/admin/registration.admin.php" />
+        <option value="$PROJECT_DIR$/admin/update.train.schedule.front.php" />
         <option value="$PROJECT_DIR$/db/project.sql" />
       </list>
     </option>
@@ -215,6 +222,16 @@
               <item name="SMS" type="462c0819:PsiDirectoryNode" />
               <item name="db" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="SMS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SMS" type="462c0819:PsiDirectoryNode" />
+              <item name="products" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SMS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SMS" type="462c0819:PsiDirectoryNode" />
+              <item name="style" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -231,6 +248,11 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\SMS\admin" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -256,12 +278,12 @@
       <updated>1543327385684</updated>
       <workItem from="1543327387501" duration="8578000" />
       <workItem from="1543387805356" duration="6147000" />
-      <workItem from="1543394153595" duration="14812000" />
+      <workItem from="1543394153595" duration="23128000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29537000" />
+    <option name="totallyTimeSpent" value="37853000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -459,13 +481,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/registration.admin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="18" column="44" selection-start-line="18" selection-start-column="44" selection-end-line="18" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="20">
@@ -477,13 +492,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="140">
           <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/login/validate.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="58" column="8" selection-start-line="58" selection-start-column="8" selection-end-line="58" selection-end-column="8" />
         </state>
       </provider>
     </entry>
@@ -511,13 +519,6 @@
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/3d9fa53c-9b1d-4c1f-9e2b-0da581ec5f4d/console.sql">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/register.admin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="59" column="12" lean-forward="true" selection-start-line="59" selection-start-column="12" selection-end-line="60" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/style/tables.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="20">
@@ -539,7 +540,56 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/shipOrders.php">
+    <entry file="file://$PROJECT_DIR$/login/validate.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="620">
+          <caret line="58" column="8" selection-start-line="58" selection-start-column="8" selection-end-line="58" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/products/register.product.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="32" column="29" selection-start-line="32" selection-start-column="29" selection-end-line="32" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/standard/standard_4.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-48">
+          <caret line="659" column="9" selection-start-line="659" selection-start-column="9" selection-end-line="659" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/register.admin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="41" column="46" lean-forward="true" selection-start-line="41" selection-start-column="46" selection-end-line="41" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/update.train.schedule.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="10" selection-start-line="10" selection-end-line="12" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/registration.admin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="774">
+          <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/update.train.schedule.front.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="820">
+          <caret line="53" column="11" lean-forward="true" selection-start-line="53" selection-start-column="11" selection-end-line="53" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/ship.orders.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
           <caret line="10" column="37" selection-start-line="10" selection-start-column="37" selection-end-line="10" selection-end-column="37" />
@@ -548,8 +598,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/db/project.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="125" column="4" selection-start-line="125" selection-start-column="4" selection-end-line="125" selection-end-column="4" />
+        <state relative-caret-position="140">
+          <caret line="115" column="83" selection-start-line="115" selection-start-column="83" selection-end-line="115" selection-end-column="83" />
         </state>
       </provider>
     </entry>
