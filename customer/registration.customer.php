@@ -37,6 +37,9 @@
         <label for="zip">ZIP  : </label>
         <input type="text" name="zip" id="zip"><br>
 
+        <label for="_type">Type  : </label>
+        <input type="text" name="_type" id="_type"><br>
+
         <label for="password">Password  : </label>
         <input type="password" name="password" id="password"><br>
 

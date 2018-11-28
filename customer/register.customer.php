@@ -14,27 +14,29 @@ if (isset($_POST['submit'])) {
     $city1 = $_POST['city1'];
     $city2 = $_POST['city2'];
     $zip = $_POST['zip'];
+    $_type = $_POST['_type'];
     $password = $_POST['password'];
     $type = "customer";
+    
 
-    if (empty($first_name) or empty($last_name) or empty($nic) or empty($email) or empty($add_no) or empty($street) or empty($city1) or empty($zip) or empty($password)) {
-        $_SESSION['admin_reg'] = 'empty';
+    if (empty($first_name) or empty($last_name) or empty($nic) or empty($email) or empty($add_no) or empty($street) or empty($city1) or empty($zip) or empty($password)or empty($_type)) {
+        $_SESSION['customer_reg'] = 'empty';
         echo "EMPTY FIELDS";
         //header("Location: registration.customer.php");
     } else if (!(filter_var($email, FILTER_VALIDATE_EMAIL))) {
-        $_SESSION['admin_reg'] = 'invalidemail';
+        $_SESSION['customer_reg'] = 'invalidemail';
         ECHO "INVALID EMAIL";
         //header("Location: registration.customer.php");
 
     } else if ((1 === preg_match('~[0-9]~', $first_name)) or (1 === preg_match('~[0-9]~', $last_name))) {
-        $_SESSION['admin_reg'] = 'invalidname';
+        $_SESSION['customer_reg'] = 'invalidname';
         ECHO "INVALID NAME";
         //header("Location: registration.customer.php");
 
     } else {
         $hashed_pass = sha1($password);
         try{
-            $sql = "INSERT INTO users (first_name,last_name,nic,email,add_no,street,city1,city2,zip,password_hash,_type) VALUES (:first_name,:last_name,:nic,:email,:add_no,:street,:city1,:city2,:zip,:hashed_pass,:_type)";
+            $sql = "INSERT INTO users (first_name,last_name,nic,email,add_no,street,city1,city2,zip,password_hash,_type) VALUES (:first_name,:last_name,:nic,:email,:add_no,:street,:city1,:city2,:zip,:hashed_pass,:_type); INSERT INTO customers (_type) VALUES (:type)";
             $stmt = $pdo->prepare($sql);
             $stmt->execute(array(
                 ":first_name" => $first_name,
@@ -47,7 +49,8 @@ if (isset($_POST['submit'])) {
                 ":city2" => $city2,
                 ":zip" => $zip,
                 ":hashed_pass" => $hashed_pass,
-                ":_type" => "customer"
+                ":_type" => "customer",
+                ":type" => $_type
             ));
             if($stmt){
                 echo "Successful";
