@@ -104,6 +104,21 @@ INSERT INTO `train_cities`(`train_id`, `city`) VALUES (4,'galle');
 INSERT INTO `train_cities`(`train_id`, `city`) VALUES (5,'trinco');
 INSERT INTO `train_cities`(`train_id`, `city`) VALUES (6,'colombo');
 INSERT INTO `train_cities`(`train_id`, `city`) VALUES (6,'matara');
+INSERT INTO `train_cities`(`train_id`, `city`) VALUES (1,'trinco');
+INSERT INTO `train_cities`(`train_id`, `city`) VALUES (1,'galle');
+INSERT INTO `train_cities`(`train_id`, `city`) VALUES (2,'trinco');
+INSERT INTO `train_cities`(`train_id`, `city`) VALUES (2,'colombo');
+INSERT INTO `train_cities`(`train_id`, `city`) VALUES (2,'jaffna');
+INSERT INTO `train_cities`(`train_id`, `city`) VALUES (3,'matara');
+INSERT INTO `train_cities`(`train_id`, `city`) VALUES (3,'colombo');
+INSERT INTO `train_cities`(`train_id`, `city`) VALUES (4,'jaffna');
+INSERT INTO `train_cities`(`train_id`, `city`) VALUES (4,'trinco');
+INSERT INTO `train_cities`(`train_id`, `city`) VALUES (3,'negombo');
+INSERT INTO `train_cities`(`train_id`, `city`) VALUES (5,'colombo');
+INSERT INTO `train_cities`(`train_id`, `city`) VALUES (5,'jaffna');
+INSERT INTO `train_cities`(`train_id`, `city`) VALUES (5,'negombo');
+INSERT INTO `train_cities`(`train_id`, `city`) VALUES (6,'negombo');
+
 
 
 INSERT INTO `shipments`(`train_id`, `store_id`, `_date`, `status`, `capacity_left`) VALUES (1,1,'2018-12-21','delivered',50);
@@ -135,8 +150,8 @@ INSERT INTO `truck_work_data`(`truck_id`,`_date`, `work_hours`) VALUES (3,'2018-
 INSERT INTO `truck_work_data`(`truck_id`,`_date`, `work_hours`) VALUES (4,'2018-11-24','20:00:00');
 INSERT INTO `truck_work_data`(`truck_id`,`_date`, `work_hours`) VALUES (5,'2018-11-24','25:00:00');
 INSERT INTO `truck_work_data`(`truck_id`,`_date`, `work_hours`) VALUES (6,'2018-11-25','32:00:00');
-INSERT INTO `truck_work_data`(`truck_id`,`_date`, `work_hours`) VALUES (6,'2018-11-26','38:00:00');
-INSERT INTO `truck_work_data`(`truck_id`,`_date`, `work_hours`) VALUES (5,'2018-11-26','30:00:00');
+INSERT INTO `truck_work_data`(`truck_id`,`_date`, `work_hours`) VALUES (7,'2018-11-26','38:00:00');
+INSERT INTO `truck_work_data`(`truck_id`,`_date`, `work_hours`) VALUES (8,'2018-11-26','30:00:00');
 
 INSERT INTO `truck_trip`(`truck_id`, `_date`, `_time`, `status`, `driver_id`, `assistant_id`, `route_id`) VALUES (1,'2018-11-21','12:00:00','pending',6,10,1);
 INSERT INTO `truck_trip`(`truck_id`, `_date`, `_time`, `status`, `driver_id`, `assistant_id`, `route_id`) VALUES (2,'2018-11-23','12:00:00','pending',8,9,2);
