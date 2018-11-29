@@ -24,3 +24,11 @@ BEGIN
 	SELECT * FROM sales_data GROUP BY city,route_id ORDER BY city,route_id;
 END //
 DELIMITER ;
+
+DELIMITER //
+DROP PROCEDURE IF EXISTS customer_order_report //
+CREATE PROCEDURE customer_order_report()
+BEGIN
+	SELECT orders.customer, orders.order_id, products_ordered.product_id, products_ordered.qty, orders.delivery_date FROM orders NATURAL LEFT JOIN products_ordered GROUP BY orders.customer ORDER BY orders.customer ASC;
+END //
+DELIMITER ;
