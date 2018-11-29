@@ -2,9 +2,25 @@ DELIMITER //
 DROP PROCEDURE IF EXISTS quarterly_sales_report //
 CREATE PROCEDURE quarterly_sales_report(year VARCHAR(4))
 BEGIN
-	SELECT * FROM sales_report WHERE YEAR(_date)=year AND MONTH(_date)<=3;
-	SELECT * FROM sales_report WHERE YEAR(_date)=year AND MONTH(_date)<=6 AND MONTH(_date)>3;
-	SELECT * FROM sales_report WHERE YEAR(_date)=year AND MONTH(_date)<=9 AND MONTH(_date)>6;
-	SELECT * FROM sales_report WHERE YEAR(_date)=year AND MONTH(_date)<=12 AND MONTH(_date)>9;
+	SELECT * FROM sales_data WHERE YEAR(_date)=year AND MONTH(_date)<=3;
+	SELECT * FROM sales_data WHERE YEAR(_date)=year AND MONTH(_date)<=6 AND MONTH(_date)>3;
+	SELECT * FROM sales_data WHERE YEAR(_date)=year AND MONTH(_date)<=9 AND MONTH(_date)>6;
+	SELECT * FROM sales_data WHERE YEAR(_date)=year AND MONTH(_date)<=12 AND MONTH(_date)>9;
 END //
-DELIMITER;
+DELIMITER ;
+
+DELIMITER //
+DROP PROCEDURE IF EXISTS items_with_most_orders //
+CREATE PROCEDURE items_with_most_orders()
+BEGIN
+	SELECT product_id, sum(qty) as qty FROM products_ordered GROUP BY product_id ORDER BY qty DESC;
+END //
+DELIMITER ;
+
+DELIMITER //
+DROP PROCEDURE IF EXISTS sales_report_cities_routes //
+CREATE PROCEDURE sales_report_cities_routes()
+BEGIN
+	SELECT * FROM sales_data GROUP BY city,route_id ORDER BY city,route_id;
+END //
+DELIMITER ;
