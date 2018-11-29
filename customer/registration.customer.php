@@ -5,11 +5,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Admin Registration</title>
+    <title>Customer Registration</title>
 </head>
 <body>
-    <h1>Register Administrator</h1>
-    <form action="register.admin.php" method="post">
+    <h1>Register Customer</h1>
+    <form action="register.customer.php" method="post">
         <label for="first_name">First Name  : </label>
         <input type="text" name="first_name" id="first_name"><br>
 
@@ -37,13 +37,20 @@
         <label for="zip">ZIP  : </label>
         <input type="text" name="zip" id="zip"><br>
 
+        <label for="_type">Type  : </label>
+        <select name="_type" id="_type">
+			<option value="retail">Retailer</option>
+			<option value="wholesale">Wholesale</option>
+			<option value="customer">Customer</option>
+		</select><br>
+
         <label for="password">Password  : </label>
         <input type="password" name="password" id="password"><br>
 
         <label for="re_password">Re - Password  : </label>
         <input type="password" name="re_password" id="re_password"><br>
 
-        <input type="submit" name="submit">
+        <INPUT type="submit" name="submit">
     </form>
 </body>
 </html>

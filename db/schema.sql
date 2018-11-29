@@ -87,7 +87,7 @@
 	);
 
 	CREATE TABLE IF NOT EXISTS orders(
-		order_id INT(10) PRIMARY KEY,
+		order_id INT(10) PRIMARY KEY ,
 		customer INT(10) NOT NULL,
 		add_no VARCHAR(15) NOT NULL,
 		street VARCHAR(20),
@@ -113,7 +113,7 @@
 
 	CREATE TABLE IF NOT EXISTS train_schedule(
 		train_id INT(10) PRIMARY KEY AUTO_INCREMENT,
-		_day DATE NOT NULL,
+		_day INT(1) NOT NULL,
 		_time TIME NOT NULL,
 		capacity FLOAT(12,2) NOT NULL
 	);
@@ -128,26 +128,26 @@
 	CREATE TABLE IF NOT EXISTS shipments(
 		shipment_id INT(10) PRIMARY KEY AUTO_INCREMENT,
 		train_id INT(10) NOT NULL,
-		store_id INT(10) NOT NULL,
 		_date DATE NOT NULL,
 		status ENUM("processing","delivered") NOT NULL,
 		capacity_left FLOAT(12,2) NOT NULL,
-		FOREIGN KEY (train_id) REFERENCES train_schedule(train_id),
-		FOREIGN KEY (store_id) REFERENCES stores(store_id)
+		FOREIGN KEY (train_id) REFERENCES train_schedule(train_id)
 	);
 
 	CREATE TABLE IF NOT EXISTS shipment_orders(
 		shipment_id INT(10),
 		order_id INT(10),
+			store_id INT(10) NOT NULL,
 		FOREIGN KEY (shipment_id) REFERENCES shipments(shipment_id),
 		FOREIGN KEY (order_id) REFERENCES orders(order_id),
-		PRIMARY KEY (shipment_id,order_id)
+		PRIMARY KEY (shipment_id,order_id),
+		FOREIGN KEY (store_id) REFERENCES stores(store_id)
 	);
 
 	CREATE TABLE IF NOT EXISTS trucks(
 		truck_id INT(10) AUTO_INCREMENT,
 		store_id INT(10) NOT NULL,
-		status VARCHAR(10) NOT NULL,
+		status VARCHAR(20) NOT NULL,
 		PRIMARY KEY (truck_id),
 		FOREIGN KEY (store_id) REFERENCES stores(store_id)
 	);
@@ -269,7 +269,13 @@
 	DELIMITER ;
 
 	-- VIEWS --
+<<<<<<< HEAD:db/project.sql
 	CREATE VIEW orders_details AS SELECT o.order_id, o.route_id, SUM(tot_capacity(qty,capacity)) AS total_capacity  FROM orders o LEFT JOIN products_ordered po on o.order_id = po.order_id LEFT JOIN products p on po.product_id = p.product_id GROUP BY o.order_id;
 	CREATE VIEW store_manifest AS SELECT o.order_id FROM orders o LEFT JOIN shipment_orders s ON s.order_id = o.order_id LEFT JOIN shipments sh ON sh.shipment_id = s.shipment_id WHERE sh.status = 'dilivered';
+=======
+	CREATE VIEW orders_details AS SELECT o.order_id, o.route_id, o.city2, SUM(tot_capacity(qty,capacity)) AS total_capacity,o.status  FROM orders o LEFT JOIN products_ordered po on o.order_id = po.order_id LEFT JOIN products p on po.product_id = p.product_id GROUP BY o.order_id;
+	CREATE VIEW trains_details AS SELECT ts.train_id,ts._day,ts._time,ts.capacity,tc.city FROM train_schedule ts LEFT JOIN train_cities tc ON ts.train_id = tc.train_id;
+
+>>>>>>> 0eab7c260efd72b6261deaff023d5f57b18f4778:db/schema.sql
 
 
