@@ -5,5 +5,5 @@
  * Date: 11/27/2018
  * Time: 10:34 AM
  */
-$_SESSION = [];
-header("Location: ../login/form.php");
+unset($_SESSION['uid']);
+header("Location: ../login");
