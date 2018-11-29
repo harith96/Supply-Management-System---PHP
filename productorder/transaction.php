@@ -98,8 +98,18 @@
 		$query = "INSERT INTO products_ordered (order_id, product_id, qty) values ('$id','$pr','$qt');";
 		//echo $query;
 		
+		$today = date("Y-m-d");		
+		$querysalesdata = "INSERT INTO sales_data (product_id, _date, city, route_id, item_sold ) values ('$pr','$today','$city2','$route_id','$qt');";
+		//echo $querysalesdata;
+		
 		$loopresult = mysqli_query($db,$query );
 		if(!$loopresult){
+			$result3 =false;
+			break;
+		}
+		
+		$loopresult2 = mysqli_query($db,$querysalesdata);
+		if(!$loopresult2){
 			$result3 =false;
 			break;
 		}
