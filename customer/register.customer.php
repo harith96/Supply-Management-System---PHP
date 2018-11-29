@@ -59,7 +59,7 @@ if (isset($_POST['submit'])) {
             $pdo = null;
         }
         catch(PDOException $e){
-            echo $stmt->errorInfo()[2];
+            echo $e->errorInfo()[2];
         }
 
     }

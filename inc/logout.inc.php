@@ -6,4 +6,4 @@
  * Time: 10:34 AM
  */
 unset($_SESSION['uid']);
-header("Location: ../login");
+header("Location: /login");
