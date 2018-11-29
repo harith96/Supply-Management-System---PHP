@@ -164,7 +164,6 @@
 		truck_trip_id INT(10) PRIMARY KEY AUTO_INCREMENT,
 		truck_id INT(10) NOT NULL,
 		_date DATE NOT NULL,
-		_time TIME NOT NULL,
 		status VARCHAR(10) NOT NULL,
 		driver_id INT(10) NOT NULL,
 		assistant_id INT(10) NOT NULL,
@@ -271,6 +270,6 @@
 
 	-- VIEWS --
 	CREATE VIEW orders_details AS SELECT o.order_id, o.route_id, SUM(tot_capacity(qty,capacity)) AS total_capacity  FROM orders o LEFT JOIN products_ordered po on o.order_id = po.order_id LEFT JOIN products p on po.product_id = p.product_id GROUP BY o.order_id;
-
+	CREATE VIEW store_manifest AS SELECT o.order_id FROM orders o LEFT JOIN shipment_orders s ON s.order_id = o.order_id LEFT JOIN shipments sh ON sh.shipment_id = s.shipment_id WHERE sh.status = 'dilivered';
 
 
