@@ -6,4 +6,4 @@
  * Time: 10:34 AM
  */
 $_SESSION = [];
-header("Location: ../login");
+header("Location: ../login/form.php");

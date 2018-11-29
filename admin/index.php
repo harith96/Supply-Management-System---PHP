@@ -14,21 +14,33 @@
   <body>
 
     <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-      <a class="navbar-brand" href="#">Customer navbar</a>
+      <a class="navbar-brand" href="#">Admin navbar</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
       <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          <li class="nav-item">
+            <a class="nav-link" href="registration.admin.php">Register admins</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link" href="ship.orders.front.php">Create shipments</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link disabled" href="#">Disabled</a>
+            <a class="nav-link" href="../employee/registration.employee.php">Register Employees</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../products/registration.product.php">Add products</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../trucktrip/create.trucktrip.html">Create trucktrip</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../vieworders/index.html">View orders</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../inc/logout.inc.php">Logout</a>
           </li>
         </ul>
       </div>

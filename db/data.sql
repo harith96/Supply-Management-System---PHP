@@ -153,11 +153,11 @@ INSERT INTO `truck_work_data`(`truck_id`,`_date`, `work_hours`) VALUES (6,'2018-
 INSERT INTO `truck_work_data`(`truck_id`,`_date`, `work_hours`) VALUES (7,'2018-11-26','38:00:00');
 INSERT INTO `truck_work_data`(`truck_id`,`_date`, `work_hours`) VALUES (8,'2018-11-26','30:00:00');
 
-INSERT INTO `truck_trip`(`truck_id`, `_date`, `_time`, `status`, `driver_id`, `assistant_id`, `route_id`) VALUES (1,'2018-11-21','12:00:00','pending',6,10,1);
-INSERT INTO `truck_trip`(`truck_id`, `_date`, `_time`, `status`, `driver_id`, `assistant_id`, `route_id`) VALUES (2,'2018-11-23','12:00:00','pending',8,9,2);
-INSERT INTO `truck_trip`(`truck_id`, `_date`, `_time`, `status`, `driver_id`, `assistant_id`, `route_id`) VALUES (3,'2018-11-24','12:00:00','pending',7,8,3);
-INSERT INTO `truck_trip`(`truck_id`, `_date`, `_time`, `status`, `driver_id`, `assistant_id`, `route_id`) VALUES (4,'2018-11-26','12:00:00','pending',8,6,4);
-INSERT INTO `truck_trip`(`truck_id`, `_date`, `_time`, `status`, `driver_id`, `assistant_id`, `route_id`) VALUES (5,'2018-11-28','12:00:00','pending',10,9,6);
+INSERT INTO `truck_trip`(`truck_id`, `_date`, `status`, `driver_id`, `assistant_id`, `route_id`) VALUES (1,'2018-11-21','pending',6,10,1);
+INSERT INTO `truck_trip`(`truck_id`, `_date`, `status`, `driver_id`, `assistant_id`, `route_id`) VALUES (2,'2018-11-23','pending',8,9,2);
+INSERT INTO `truck_trip`(`truck_id`, `_date`, `status`, `driver_id`, `assistant_id`, `route_id`) VALUES (3,'2018-11-24','pending',7,8,3);
+INSERT INTO `truck_trip`(`truck_id`, `_date`, `status`, `driver_id`, `assistant_id`, `route_id`) VALUES (4,'2018-11-26','pending',8,6,4);
+INSERT INTO `truck_trip`(`truck_id`, `_date`, `status`, `driver_id`, `assistant_id`, `route_id`) VALUES (5,'2018-11-28','pending',10,9,6);
 
 INSERT INTO `truck_trip_orders`(`truck_schedule_id`, `order_id`) VALUES (1,1);
 INSERT INTO `truck_trip_orders`(`truck_schedule_id`, `order_id`) VALUES (1,2);
